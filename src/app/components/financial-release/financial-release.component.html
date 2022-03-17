@@ -1,0 +1,35 @@
+<div id="container-financial-release">
+  <div id="form-container">
+    <div id="form-container-left">
+      <p>teste</p>
+    </div>
+    <div id="form-container-right">
+      <form (submit)="submit($event)">
+        <div id="form-container-inside">
+          <div class="input-content-box">
+            <label for="category">Categoria</label>
+            <select name="category" id="select-category" value="0">
+              <option value="0"></option>
+              <option value="1">Combustível</option>
+              <option value="2">Mercado</option>
+              <option value="3">Farmácia</option>
+            </select>
+          </div>
+          <div class="input-content-box">
+            <label for="releasevalue">Valor</label>
+            <input
+              type="text"
+              placeholder="Digite o valor"
+              name="releasevalue"
+            />
+          </div>
+          <div class="input-content-box">
+            <label for="date">Data do registro</label>
+            <input type="date" placeholder="Digite o valor" name="date" />
+          </div>
+          <button type="submit">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

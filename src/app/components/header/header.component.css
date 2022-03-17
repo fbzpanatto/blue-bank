@@ -1,0 +1,93 @@
+.inside-header-container {
+  position: relative;
+  display: grid;
+  margin-top: 10px;
+  height: 100%;
+  grid-template-columns: 450px auto;
+  grid-template-areas: "titlelogo usermenu";
+  user-select: none;
+}
+
+.grid-item1 {
+  display: flex;
+  align-items: center;
+  grid-area: titlelogo;
+}
+
+.grid-item2 {
+  display: flex;
+  align-items: center;
+  grid-area: usermenu;
+}
+
+/* ---------------- */
+
+.grid-item1 header {
+  position: absolute;
+  left: 180px;
+}
+
+.grid-item1 h1 {
+  display: flex;
+  align-items: center;
+  letter-spacing: 4px;
+  font-size: 1.4em;
+  color: #fff;
+  cursor: pointer;
+}
+
+.user-menu {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  user-select: none;
+}
+
+.user-menu p,
+.user-menu img,
+.user-menu a,
+.user-menu span,
+.user-menu li {
+  display: flex;
+  align-items: center;
+}
+
+.user-menu img {
+  user-select: none;
+  width: 50px;
+  height: 50px;
+}
+
+.user-menu ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.user-menu ul li a {
+  color: rgba(255, 255, 255, 0.911);
+  text-decoration: none;
+}
+
+/* MATERIAL ICONS */
+
+.material-icons {
+  margin-right: 7px;
+}
+
+.material-icons.md-48 {
+  font-size: 1.5em;
+}
+
+.material-icons.logout {
+  color: rgb(189, 26, 26);
+}
+
+.material-icons.settings {
+  transition: 0.3s;
+}
+
+.material-icons.settings:hover {
+  transform: rotate(90deg);
+}

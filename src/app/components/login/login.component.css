@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+}
+
+.external-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  background-image: linear-gradient(to right, #094594, #357cda);
+}
+
+.inside-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40% auto;
+  width: 700px;
+  height: 400px;
+  margin: auto;
+  border: 1px solid #094594;
+  box-shadow: 0 0 0.5em rgb(36, 36, 36);
+}
+
+/* grid item 1 */
+
+#grid-item1 {
+  display: grid;
+  grid-template-rows: 41% auto;
+  color: #fff;
+  font-size: 2em;
+  background-image: linear-gradient(to bottom, #094594, #357cda);
+  height: 100%;
+}
+
+.heading-title-ico {
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  padding: 20px;
+}
+
+.heading-title-ico h4 {
+  margin-bottom: 2px;
+  font-size: 0.6em;
+}
+
+.heading-title-ico span {
+  margin-right: 1px;
+}
+
+.subscrible-div {
+  padding: 20px;
+}
+
+.subscrible-div p {
+  width: 190px;
+}
+
+.subscrible-div p a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.subscrible-div p:hover {
+  cursor: pointer;
+}
+
+.subscrible-div p:hover + span {
+  width: 180px;
+}
+
+.subscrible-div .subscrible-span {
+  margin-top: 5px;
+  height: 3px;
+  width: 60px;
+  display: block;
+  background-color: #fff;
+  transition: 0.5s;
+}
+
+/* grid absolute */
+
+.material-icons.md-48 {
+  margin-right: 10px;
+  font-size: 48px;
+  color: #fff;
+}
+
+/* grid item 2 */
+
+#grid-item2 {
+  display: flex;
+  background-color: #fff;
+  height: 100%;
+}
+
+#grid-item2 form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+.input-group {
+  margin: 20px 0;
+}
+
+#grid-item2 form label {
+  color: #094594;
+  display: block;
+}
+
+#grid-item2 form input {
+  width: 100%;
+}
+
+#grid-item2 button {
+  border: none;
+  background-image: linear-gradient(to bottom, #094594, #357cda);
+  width: 100px;
+  height: 40px;
+  font-size: 1.2em;
+  color: #fff;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+#grid-item2 input {
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #094594;
+}
+
+#grid-item2 input:focus {
+  outline: 1px solid #094594;
+}
+
+#grid-item2 input::placeholder {
+  color: #357cda;
+}
+
+#grid-item2 p {
+  font-size: 0.8em;
+  color: #094594;
+  margin-bottom: 30px;
+}
+
+#grid-item2 a {
+  color: #094594;
+  text-decoration: none;
+}
+/* absolute div */
+
+#absolute-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 245px;
+  top: 168px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  background-image: linear-gradient(to bottom, #094594, #357cda);
+}

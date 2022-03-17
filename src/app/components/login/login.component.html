@@ -1,0 +1,45 @@
+<div class="external-container">
+  <div class="inside-container">
+    <div id="grid-item1">
+      <div class="heading-title-ico">
+        <span class="material-icons md-48"> savings </span>
+        <h4>Bluebank</h4>
+      </div>
+      <div class="subscrible-div">
+        <p><a href="#">Inscreva-se</a></p>
+        <span class="subscrible-span"></span>
+      </div>
+    </div>
+    <div id="absolute-arrow">
+      <span class="material-icons md-48"> login </span>
+    </div>
+    <div id="grid-item2">
+      <form method="post" (submit)="submit()">
+        <div class="input-group">
+          <label for="username">USUÁRIO</label>
+          <input
+            type="text"
+            name="username"
+            #username
+            placeholder="Digite sua ID, e-mail ou cpf"
+          />
+        </div>
+        <div class="input-group">
+          <label for="password">SENHA</label>
+          <input
+            type="password"
+            name="password"
+            #password
+            placeholder="Digite sua senha"
+          />
+        </div>
+        <div>
+          <p><a href="#">Esqueci minha senha </a></p>
+        </div>
+        <div>
+          <button type="submit">Entrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
