@@ -1,0 +1,57 @@
+div#listall-container {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: inset 6px 6px 8px -8px #000000;
+  height: 100%;
+}
+
+div#box-container-list {
+  margin-top: 30px;
+}
+
+table {
+  margin: 0 auto;
+  text-align: center;
+  color: #357cda;
+  width: 95%;
+  overflow: auto;
+}
+
+table th {
+  color: #094594;
+  font-weight: 500;
+}
+
+table tr {
+  border-bottom: 1px solid #094594;
+}
+
+th,
+td {
+  padding: 15px;
+}
+
+.material-icons {
+  box-shadow: 0 0 0.05em rgb(36, 36, 36);
+  cursor: pointer;
+  padding: 0px 3px;
+  border-radius: 2px;
+  margin: 0px 5px;
+  color: #fff;
+}
+
+.material-icons:hover {
+  box-shadow: none;
+}
+
+.edit {
+  background-color: rgb(66, 66, 66);
+}
+
+.delete {
+  background-color: rgb(224, 39, 39);
+}

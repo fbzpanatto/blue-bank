@@ -1,35 +1,29 @@
-<div class="inside-header-container">
-  <div class="grid-item1">
-    <header>
-      <h1><span class="material-icons md-48"> savings </span>Bluebank</h1>
-    </header>
-  </div>
-  <div class="grid-item2">
-    <div class="user-menu">
-      <ul>
-        <li>
-          <img [src]="myWheaterObj.icon" [alt]="myWheaterObj.description" />
-          <p [ngStyle]="{ color: 'rgba(255, 255, 255, 0.911)' }">
-            {{ myWheaterObj.temp }}ºC
-          </p>
-        </li>
-        <li>
-          <p [ngStyle]="{ color: '#9bdff0' }">
-            <span class="material-icons"> account_circle </span>{{ userName }}
-          </p>
-        </li>
-        <li>
-          <a routerLink="dashboard"
-            ><span class="material-icons settings"> settings </span
-            >Configurações</a
-          >
-        </li>
-        <li>
-          <a routerLink="dashboard"
-            ><span class="material-icons logout">logout</span>Sair</a
-          >
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
+<header class="container">
+  <ul clas>
+    <li class="clickable">
+      <p class="title">
+        <span class="material-icons pig"> savings </span>Bluebank
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="material-icons user"> account_circle </span>{{ userName }}
+      </p>
+    </li>
+    <li class="clickable">
+      <p class="pcolor">
+        <span class="material-icons settings"> settings </span>Configurações
+      </p>
+    </li>
+    <li class="clickable">
+      <p class="pcolor">
+        <span class="material-icons logout">logout</span>Sair
+      </p>
+    </li>
+  </ul>
+</header>
+
+<!-- <img [src]="myWheaterObj.icon" [alt]="myWheaterObj.description" />
+         <p [ngStyle]="{ color: 'rgba(255, 255, 255, 0.911)' }">
+           {{ myWheaterObj.temp }}ºC
+         </p> -->

@@ -1,0 +1,201 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "fbzpanatto",
+      "email": "fbzpanatto@gmail.com",
+      "password": "123456",
+      "personId": 1
+    },
+    {
+      "id": 2,
+      "username": "gislainespaiva",
+      "email": "gislainespaiva@gmail.com",
+      "password": "123456",
+      "personId": 2
+    }
+  ],
+  "persons": [
+    {
+      "id": 1,
+      "name": "Fabrizio Panato",
+      "phone": "11968568913",
+      "cpf": "36933425800",
+      "birthday": "06/02/1991"
+    },
+    {
+      "id": 2,
+      "name": "Gislaine Salvador de Paiva",
+      "phone": "11912347894",
+      "cpf": "31599800100",
+      "birthday": "15/04/1990"
+    }
+  ],
+  "months": [
+    {
+      "id": 1,
+      "name": "Janeiro"
+    },
+    {
+      "id": 2,
+      "name": "Fevereiro"
+    },
+    {
+      "id": 3,
+      "name": "Março"
+    },
+    {
+      "id": 4,
+      "name": "Abril"
+    },
+    {
+      "id": 5,
+      "name": "Maio"
+    },
+    {
+      "id": 6,
+      "name": "Junho"
+    },
+    {
+      "id": 7,
+      "name": "Julho"
+    },
+    {
+      "id": 8,
+      "name": "Agosto"
+    },
+    {
+      "id": 9,
+      "name": "Setembro"
+    },
+    {
+      "id": 10,
+      "name": "Outubro"
+    },
+    {
+      "id": 11,
+      "name": "Novembro"
+    },
+    {
+      "id": 12,
+      "name": "Dezembro"
+    }
+  ],
+  "years": [
+    {
+      "id": 1,
+      "name": "2022"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Combustível"
+    },
+    {
+      "id": 2,
+      "name": "Mercado"
+    },
+    {
+      "id": 3,
+      "name": "Farmácia"
+    },
+    {
+      "id": 4,
+      "name": "Outros"
+    }
+  ],
+  "releases": [
+    {
+      "id": 1,
+      "userId": 1,
+      "category": "1",
+      "releaseValue": "123.98",
+      "releaseDate": "2022-03-21",
+      "operation": "2",
+      "description": "Posto Calopsyta"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "category": "3",
+      "releaseValue": "78.98",
+      "releaseDate": "2022-03-21",
+      "operation": "2",
+      "description": "Produtos de higiene"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "category": "2",
+      "releaseValue": "8797,8",
+      "releaseDate": "2022-03-21",
+      "operation": "1",
+      "description": "asdasdasd"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "category": "1",
+      "releaseValue": "123",
+      "releaseDate": "2022-03-21",
+      "operation": "1",
+      "description": "teste"
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "category": "3",
+      "releaseValue": "3333123",
+      "releaseDate": "2022-03-21",
+      "operation": "1",
+      "description": "ddddd"
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "category": "1",
+      "releaseValue": "45654665",
+      "releaseDate": "2022-03-21",
+      "operation": "2",
+      "description": "qasddfghgh"
+    },
+    {
+      "id": 7,
+      "userId": 1,
+      "category": "1",
+      "releaseValue": "123123",
+      "releaseDate": "2022-03-21",
+      "operation": "2",
+      "description": "dasdasdasd"
+    },
+    {
+      "id": 8,
+      "userId": 1,
+      "category": "2",
+      "releaseValue": "85.65",
+      "releaseDate": "2022-03-21",
+      "operation": "2",
+      "description": "Covabra"
+    },
+    {
+      "id": 9,
+      "userId": 1,
+      "category": "2",
+      "releaseValue": "9999",
+      "releaseDate": "2022-03-21",
+      "operation": "1",
+      "description": "Descrição Teste"
+    }
+  ],
+  "operations": [
+    {
+      "id": 1,
+      "name": "Entrada"
+    },
+    {
+      "id": 2,
+      "name": "Saída"
+    }
+  ]
+}

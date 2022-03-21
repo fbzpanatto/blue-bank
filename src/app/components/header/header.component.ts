@@ -25,25 +25,25 @@ export class HeaderComponent implements OnInit {
  }
 
  ngOnInit(): void {
-  this.getdata()
+  // this.getdata()
  }
 
- getWeather(): Observable<any> {
-  return this.http.get<any>(this.url)
- }
+ // getWeather(): Observable<any> {
+ //  return this.http.get<any>(this.url)
+ // }
 
- getdata(): void {
-  this.getWeather()
-   .pipe(map(data => {
-    let result = this.keyValue.transform(data)
-    let localTemp: any = result[6].value
-    this.myWheaterObj.temp = localTemp.temp
-    // TODO: A posição do array muda, preciso fazer um forEache procurando pelo key correta que exibe o icon e a descrição
-    localTemp = result[12].value
-    console.log(result)
-    this.myWheaterObj.description = localTemp[0].description
-    this.myWheaterObj.icon = `http://openweathermap.org/img/wn/${localTemp[0].icon}@2x.png`
-   }))
-   .subscribe()
- }
+ // getdata(): void {
+ //  this.getWeather()
+ //   .pipe(map(data => {
+ //    let result = this.keyValue.transform(data)
+ //    let localTemp: any = result[6].value
+ //    this.myWheaterObj.temp = localTemp.temp
+ //    // TODO: A posição do array muda, preciso fazer um forEache procurando pelo key correta que exibe o icon e a descrição
+ //    localTemp = result[12].value
+ //    console.log(result)
+ //    this.myWheaterObj.description = localTemp[0].description
+ //    this.myWheaterObj.icon = `http://openweathermap.org/img/wn/${localTemp[0].icon}@2x.png`
+ //   }))
+ //   .subscribe()
+ // }
 }

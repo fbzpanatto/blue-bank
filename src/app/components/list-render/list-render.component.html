@@ -1,0 +1,29 @@
+<div id="listall-container">
+  <div id="box-container-list">
+    <table>
+      <tr>
+        <th>#No</th>
+        <th>Categoria</th>
+        <th>Descrição</th>
+        <th>Operação</th>
+        <th>Valor</th>
+        <th>Usuário</th>
+        <th>Data</th>
+        <th>Ações</th>
+      </tr>
+      <tr *ngFor="let release of releases$">
+        <td>{{ release.id }}</td>
+        <td>{{ getCategoryName(release.category) }}</td>
+        <td>{{ release.description }}</td>
+        <td>{{ release.operation }}</td>
+        <td>{{ release.releaseValue }}</td>
+        <td>{{ release.userId }}</td>
+        <td>{{ release.releaseDate }}</td>
+        <td>
+          <span class="material-icons edit"> edit </span
+          ><span class="material-icons delete"> delete </span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
