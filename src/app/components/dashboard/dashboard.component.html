@@ -1,1 +1,75 @@
-<p>dashboard works!</p>
+<div id="container">
+  <div id="percent" class="grid-item">
+    <div class="progressLess">
+      <h1>Porcentagem dos gastos</h1>
+      <div class="category-item" *ngFor="let element of sumByCategories">
+        <div
+          id="progress-item"
+          *ngIf="element.category != 5 && element.category != 4"
+        >
+          <p class="title">
+            {{ getCategoryName(element.category) }} |
+            <span class="red">R$ {{ element.total }}</span> |
+            {{ porcentagem(element.total) | number }}%
+          </p>
+          <p>
+            <progress
+              id="file"
+              [value]="porcentagem(element.total)"
+              max="100"
+            ></progress>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="progressRaise">
+      <h1>Porcentagem dos Ganhos</h1>
+      <div class="category-item" *ngFor="let element of sumByCategories">
+        <div
+          id="progress-item"
+          *ngIf="element.category == 5 || element.category == 4"
+        >
+          <p class="title">
+            {{ getCategoryName(element.category) }} |
+            <span class="green">R$ {{ element.total }}</span> |
+            {{ porcentagemGanhos(element.total) | percent }}
+          </p>
+          <p>
+            <progress
+              id="file2"
+              [value]="gerarPorcentagemParaBarradeProgresso(element.total)"
+              max="100"
+            ></progress>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div id="content-grid-balance">
+      <p>Entradas</p>
+      <p class="pright green">{{ sumEntrance | number }}</p>
+      <p>Saídas</p>
+      <p class="pright red">
+        {{ sumWithdraw | number }}
+      </p>
+      <p>Saldo</p>
+      <p class="pright">{{ resultado | number }}</p>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div id="content-bottom-square">
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book. It has survived not only five
+        centuries, but also the leap into electronic typesetting, remaining
+        essentially unchanged. It was popularised in the 1960s with the release
+        of Letraset sheets containing Lorem Ipsum passages, and more recently
+        with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum.
+      </p>
+    </div>
+  </div>
+</div>

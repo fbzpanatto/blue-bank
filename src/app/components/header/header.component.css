@@ -1,50 +1,52 @@
 .container {
   display: flex;
   flex-direction: row;
+  align-content: center;
   padding: 5px 0px;
   background-color: #094594;
   color: #fff;
 }
 
-ul {
+.container div:nth-child(1) {
+  padding-left: 180px;
   flex: 1;
+}
+
+h1 {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  font-size: 2em;
 }
 
-li.clickable {
-  cursor: pointer;
-}
-
-p {
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-}
-
-p.pcolor {
-  color: rgba(255, 255, 255, 0.911);
-}
-
-p.title {
-  letter-spacing: 3px;
-  font-size: 36px;
-}
-
-span.material-icons.pig {
+.pig {
   font-size: 48px;
 }
 
-span.user {
-  color: rgba(255, 255, 255, 0.911);
+.container div:nth-child(2) {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
-span.material-icons {
-  margin-right: 3px;
-  font-size: 36px;
+ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 10px;
 }
 
-span.logout {
-  color: rgba(255, 255, 255, 0.911);
+li span {
+  font-size: 24px;
+}
+
+li button {
+  background-color: #094594;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 5px;
+  margin: 0 10px;
+}
+
+.material-icons {
+  color: #fff;
 }

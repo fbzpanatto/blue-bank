@@ -10,13 +10,16 @@ import { Releases, Categories, Operation } from 'src/app/BlueBankInterfaces';
 export class ListRenderComponent implements OnInit {
 
  releases$: Releases[] = []
+ originalReleases$: Releases[] = []
  categories$: Categories[] = []
+ operations$: Operation[] = []
 
  constructor(private fetchService: FetchService) { }
 
  ngOnInit(): void {
   this.getReleases()
   this.getCategories()
+  this.getOperations()
  }
 
  getCategories(): void {
@@ -26,8 +29,20 @@ export class ListRenderComponent implements OnInit {
    })
  }
 
+ getOperations(): void {
+  this.fetchService.loadOperations()
+   .subscribe(operations => {
+    this.operations$ = operations
+   })
+ }
+
  getCategoryName(id: any) {
   let myele = this.categories$.find(el => el.id == id)
+  return myele?.name
+ }
+
+ getOperationName(id: any) {
+  let myele = this.operations$.find(el => el.id == id)
   return myele?.name
  }
 
@@ -45,7 +60,21 @@ export class ListRenderComponent implements OnInit {
      return 0
     })
     this.releases$ = releases
+    this.originalReleases$ = releases
    })
  }
 
+ filterbydate(min: String, max: String) {
+  this.releases$ = this.originalReleases$
+  let myArr = this.releases$.filter(release => {
+   return String(release.releaseDate) >= min && String(release.releaseDate) <= max
+  })
+  this.releases$ = myArr
+ }
+
+ deleteRelease(id: number): void {
+  this.fetchService.deleteRelease(id).subscribe(_ => {
+   this.getReleases()
+  })
+ }
 }

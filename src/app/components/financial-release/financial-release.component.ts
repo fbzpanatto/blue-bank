@@ -42,7 +42,6 @@ export class FinancialReleaseComponent implements OnInit {
    ...this.financialReleaseForm.value
   }
 
-  console.log(temporaryRelease)
   this.add(temporaryRelease)
   this.financialReleaseForm.reset()
 
@@ -52,7 +51,6 @@ export class FinancialReleaseComponent implements OnInit {
  add(release: Releases): void {
   this.fetchService.addRelease(release)
    .subscribe(release => {
-    console.log("release cadastrado com sucesso", release)
    })
  }
 
@@ -60,7 +58,6 @@ export class FinancialReleaseComponent implements OnInit {
   this.fetchService.loadCategories()
    .subscribe(categories => {
     this.categories$ = categories
-    console.log(this.categories$)
    })
  }
 

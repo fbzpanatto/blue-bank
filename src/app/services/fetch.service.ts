@@ -32,6 +32,10 @@ export class FetchService {
   )
  }
 
+ deleteRelease(id: number): Observable<Releases> {
+  return this.http.delete<Releases>(`${this.releasesEndpoint}/${id}`, this.httpOptions)
+ }
+
  /* Categories */
  loadCategories(): Observable<Categories[]> {
   return this.http.get<Categories[]>(this.categoriesEndpoint)

@@ -31,62 +31,6 @@
       "birthday": "15/04/1990"
     }
   ],
-  "months": [
-    {
-      "id": 1,
-      "name": "Janeiro"
-    },
-    {
-      "id": 2,
-      "name": "Fevereiro"
-    },
-    {
-      "id": 3,
-      "name": "Março"
-    },
-    {
-      "id": 4,
-      "name": "Abril"
-    },
-    {
-      "id": 5,
-      "name": "Maio"
-    },
-    {
-      "id": 6,
-      "name": "Junho"
-    },
-    {
-      "id": 7,
-      "name": "Julho"
-    },
-    {
-      "id": 8,
-      "name": "Agosto"
-    },
-    {
-      "id": 9,
-      "name": "Setembro"
-    },
-    {
-      "id": 10,
-      "name": "Outubro"
-    },
-    {
-      "id": 11,
-      "name": "Novembro"
-    },
-    {
-      "id": 12,
-      "name": "Dezembro"
-    }
-  ],
-  "years": [
-    {
-      "id": 1,
-      "name": "2022"
-    }
-  ],
   "categories": [
     {
       "id": 1,
@@ -102,90 +46,59 @@
     },
     {
       "id": 4,
-      "name": "Outros"
+      "name": "Salário Fabrizio"
+    },
+    {
+      "id": 5,
+      "name": "Salário Gislaine"
+    },
+    {
+      "id": 6,
+      "name": "Imposto"
+    },
+    {
+      "id": 7,
+      "name": "Água"
+    },
+    {
+      "id": 8,
+      "name": "Luz"
+    },
+    {
+      "id": 9,
+      "name": "Internet"
+    },
+    {
+      "id": 10,
+      "name": "Condomínio"
+    },
+    {
+      "id": 11,
+      "name": "Besteiras"
+    },
+    {
+      "id": 12,
+      "name": "Lazer"
     }
   ],
   "releases": [
     {
       "id": 1,
       "userId": 1,
-      "category": "1",
-      "releaseValue": "123.98",
-      "releaseDate": "2022-03-21",
-      "operation": "2",
-      "description": "Posto Calopsyta"
+      "category": "4",
+      "releaseValue": "1520.78",
+      "releaseDate": "2022-03-23",
+      "operation": "1",
+      "description": "Vale Março"
     },
     {
       "id": 2,
       "userId": 1,
-      "category": "3",
-      "releaseValue": "78.98",
-      "releaseDate": "2022-03-21",
+      "category": "6",
+      "releaseValue": "168.12",
+      "releaseDate": "2022-03-23",
       "operation": "2",
-      "description": "Produtos de higiene"
-    },
-    {
-      "id": 3,
-      "userId": 1,
-      "category": "2",
-      "releaseValue": "8797,8",
-      "releaseDate": "2022-03-21",
-      "operation": "1",
-      "description": "asdasdasd"
-    },
-    {
-      "id": 4,
-      "userId": 1,
-      "category": "1",
-      "releaseValue": "123",
-      "releaseDate": "2022-03-21",
-      "operation": "1",
-      "description": "teste"
-    },
-    {
-      "id": 5,
-      "userId": 1,
-      "category": "3",
-      "releaseValue": "3333123",
-      "releaseDate": "2022-03-21",
-      "operation": "1",
-      "description": "ddddd"
-    },
-    {
-      "id": 6,
-      "userId": 1,
-      "category": "1",
-      "releaseValue": "45654665",
-      "releaseDate": "2022-03-21",
-      "operation": "2",
-      "description": "qasddfghgh"
-    },
-    {
-      "id": 7,
-      "userId": 1,
-      "category": "1",
-      "releaseValue": "123123",
-      "releaseDate": "2022-03-21",
-      "operation": "2",
-      "description": "dasdasdasd"
-    },
-    {
-      "id": 8,
-      "userId": 1,
-      "category": "2",
-      "releaseValue": "85.65",
-      "releaseDate": "2022-03-21",
-      "operation": "2",
-      "description": "Covabra"
-    },
-    {
-      "id": 9,
-      "userId": 1,
-      "category": "2",
-      "releaseValue": "9999",
-      "releaseDate": "2022-03-21",
-      "operation": "1",
-      "description": "Descrição Teste"
+      "description": "IPTU - Março"
     }
   ],
   "operations": [

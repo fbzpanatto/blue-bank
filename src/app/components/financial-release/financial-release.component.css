@@ -1,67 +1,26 @@
 * {
   box-sizing: border-box;
-  font-size: 18px;
+  font-size: 16px;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 6px 6px 8px -8px #000000;
+  background-color: #ebebeb;
+  height: 100%;
 }
 
 /* DIV BOXES CONFIGURATION */
 
-div.external-container {
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  box-shadow: inset 6px 6px 8px -8px #000000;
-}
-
-div.external-container .inside-container {
-  position: relative;
-  display: grid;
-  grid-template-columns: 40% auto;
-  width: 700px;
-  border: 5px solid #fff;
-  box-shadow: 0 0 0.2em rgb(36, 36, 36);
-}
-
-div#grid-item1 {
-  display: flex;
-  align-items: center;
-  color: #fff;
-  background-image: linear-gradient(to bottom, #094594, #357cda);
-}
-
-div#grid-item1 h2 {
-  padding: 30px;
-  font-size: 3em;
-}
-
-div#grid-item2 {
-  display: flex;
-  background-color: #fff;
-}
-
-div.absolute-div-span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 245px;
-  top: 168px;
-  width: 70px;
-  height: 70px;
-  border-radius: 50px;
-  border: 5px solid #fff;
-  background-image: linear-gradient(to bottom, #094594, #357cda);
-}
-/* FORM CONFIGURATION */
-
 form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  width: 70%;
+  box-shadow: 0 0 0.3em rgb(36, 36, 36);
+  background-color: #fff;
+  padding: 20px 40px;
+  /* box-shadow: 0 0 0.5em rgb(36, 36, 36); */
+  width: 50%;
+  border-radius: 3px;
 }
 
 div.input-group {
@@ -69,8 +28,8 @@ div.input-group {
 }
 
 label {
-  font-size: 16px;
-  padding-bottom: 10px;
+  margin-bottom: 5px;
+  font-size: 12px;
   color: #094594;
   display: block;
 }
@@ -95,12 +54,13 @@ select:focus {
 
 button.submit-btn {
   border: none;
-  background-image: linear-gradient(to bottom, #094594, #357cda);
-  width: 100px;
+  background-color: #094594;
+  width: 100%;
   height: 40px;
   color: #fff;
   margin-top: 20px;
   cursor: pointer;
+  border-radius: 3px;
   margin-bottom: 30px;
 }
 

@@ -2,12 +2,12 @@
   display: flex;
   flex-direction: row;
   flex: 1;
+  background-color: #094594;
 }
 
 .under-container div:nth-child(1) {
   flex: 1;
-  background-color: #357cda;
-  border-top: 5px solid #fff;
+  background-color: #094594;
 }
 
 .under-container div:nth-child(2) {
@@ -15,6 +15,6 @@
   box-sizing: border-box;
   flex: 7;
   background-color: #ebecee;
-  border-top: 5px solid #fff;
-  border-left: 5px solid #fff;
+  border-top: 3px solid #fff;
+  border-left: 3px solid #fff;
 }

@@ -1,4 +1,18 @@
 <div id="listall-container">
+  <div id="filter">
+    <label for="mindate">Data mínima</label>
+    <input type="date" id="mindate" name="mindate" #mindate />
+    <label for="maxdate">Data máxima</label>
+    <input type="date" id="maxdate" name="maxdate" #maxdate />
+    <button
+      type="button"
+      style="cursor: pointer"
+      (click)="filterbydate(mindate.value, maxdate.value)"
+    >
+      <span class="material-icons search">search</span>
+      Filtrar
+    </button>
+  </div>
   <div id="box-container-list">
     <table>
       <tr>
@@ -15,13 +29,18 @@
         <td>{{ release.id }}</td>
         <td>{{ getCategoryName(release.category) }}</td>
         <td>{{ release.description }}</td>
-        <td>{{ release.operation }}</td>
+        <td>{{ getOperationName(release.operation) }}</td>
         <td>{{ release.releaseValue }}</td>
         <td>{{ release.userId }}</td>
         <td>{{ release.releaseDate }}</td>
         <td>
           <span class="material-icons edit"> edit </span
-          ><span class="material-icons delete"> delete </span>
+          ><span
+            class="material-icons delete"
+            (click)="deleteRelease(release.id)"
+          >
+            delete
+          </span>
         </td>
       </tr>
     </table>
