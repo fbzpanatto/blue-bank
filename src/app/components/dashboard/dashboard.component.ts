@@ -1,5 +1,5 @@
 import { Releases, Categories } from 'src/app/BlueBankInterfaces';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FetchService } from 'src/app/services/fetch.service';
 
 type sumOfAllCategories = {
@@ -14,6 +14,8 @@ type sumOfAllCategories = {
 })
 export class DashboardComponent implements OnInit {
 
+ @Output() newTitleEvent = new EventEmitter<string>()
+
  releases$: Releases[] = []
  sumEntrance!: string
  sumWithdraw!: string
@@ -24,6 +26,7 @@ export class DashboardComponent implements OnInit {
  constructor(private fetchService: FetchService) { }
 
  ngOnInit(): void {
+  this.newTitleEvent.emit('Dashboard')
   this.getReleases()
   this.getCategories()
  }

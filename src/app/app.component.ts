@@ -8,4 +8,17 @@ import { Component } from '@angular/core';
 export class AppComponent {
  title = 'blue-bank';
  islogged: boolean = true
+ headerTitle: string = ''
+
+ constructor() {
+
+ }
+
+ ngOnInit() {
+
+ }
+
+ settingNewTitle(value: string): void {
+  this.headerTitle = value
+ }
 }

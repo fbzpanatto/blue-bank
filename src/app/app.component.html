@@ -1,5 +1,11 @@
-<app-header></app-header>
-<div class="under-container">
-  <div><app-aside></app-aside></div>
-  <div><router-outlet></router-outlet></div>
+<div id="app-container">
+  <div class="grid-item" id="header">
+    <app-header [sectionTitle]="headerTitle"></app-header>
+  </div>
+  <div class="grid-item" id="aside-left">
+    <app-aside (listeningForNewtitle)="settingNewTitle($event)"></app-aside>
+  </div>
+  <div class="grid-item" id="main">
+    <router-outlet></router-outlet>
+  </div>
 </div>

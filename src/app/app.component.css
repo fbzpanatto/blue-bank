@@ -1,20 +1,36 @@
-.under-container {
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-  background-color: #094594;
+#app-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 5fr 3fr;
+      grid-template-columns: auto 5fr 3fr;
+  -ms-grid-rows: 13vh auto;
+      grid-template-rows: 13vh auto;
+  min-height: 100vh;
+  background-color: var(--color-secondary);
 }
 
-.under-container div:nth-child(1) {
-  flex: 1;
-  background-color: #094594;
+#app-container #header {
+      grid-template-areas: header;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 4;
 }
 
-.under-container div:nth-child(2) {
-  z-index: 10;
-  box-sizing: border-box;
-  flex: 7;
-  background-color: #ebecee;
-  border-top: 3px solid #fff;
-  border-left: 3px solid #fff;
+#app-container #aside-left {
+      grid-template-areas: asideL;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
 }
+
+#app-container #main {
+  position: relative;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 4;
+      grid-template-areas: main;
+  border-top-left-radius: 3px;
+  -webkit-box-shadow: inset 3px 3px 3px -2px #000000;
+  box-shadow: inset 3px 3px 3px -2px #000000;
+  background-color: var(--color-primary);
+}
+/*# sourceMappingURL=app.component.css.map */

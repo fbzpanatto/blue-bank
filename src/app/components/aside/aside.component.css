@@ -1,54 +1,53 @@
 .inside-aside-container {
-  position: relative;
+  background-color: var(--color-secondary);
+  height: 100%;
+  padding: 1rem;
+  border-top-right-radius: 3px;
+}
+
+.inside-aside-container nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 180px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.img-box {
-  margin-top: 30px;
+.inside-aside-container nav li {
+  margin-bottom: 1rem;
+}
+
+.inside-aside-container nav li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-image: url("../../../assets/img/avatar1.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  border: 2px solid rgba(255, 255, 255, 0.911);
-  box-shadow: inset 0px 0px 15px -7px #000000;
-}
-
-.navbar-container {
-  width: 100%;
-  padding-top: 40px;
-}
-.navbar-container li {
-  border-bottom: 2px ridge #ffffff;
-}
-.navbar-container li:first-child a {
-  border-top: 2px ridge #ffffff;
-}
-
-.navbar-container a {
-  color: #fff;
+  padding: 0.5rem;
+  background-color: var(--color-grey-4);
+  border-radius: 3px;
+  border: 1px ridge var(--color-secondary);
   text-decoration: none;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
-.navbar-container a {
-  display: flex;
-  align-items: center;
-  padding: 10px;
+.inside-aside-container nav li a:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  border: 1px solid var(--color-secondary);
+  background-color: var(--color-grey-5);
 }
 
-.navbar-container a:hover {
-  background-color: #fff;
-  color: #357cda;
+.inside-aside-container nav li a:hover .material-icons {
+  color: var(--color-grey-1);
 }
 
-.material-icons {
-  margin-right: 5px;
+.inside-aside-container nav li a .material-icons {
+  color: var(--color-grey-2);
+  font-size: 2rem;
 }
+/*# sourceMappingURL=aside.component.css.map */

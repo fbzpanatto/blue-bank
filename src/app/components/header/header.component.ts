@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators'
 import { KeyValuePipe } from '@angular/common';
@@ -11,6 +11,8 @@ import { Observable } from 'rxjs';
  providers: [KeyValuePipe]
 })
 export class HeaderComponent implements OnInit {
+
+ @Input() sectionTitle: string = ''
 
  constructor(private http: HttpClient, private keyValue: KeyValuePipe) { }
 
@@ -25,7 +27,7 @@ export class HeaderComponent implements OnInit {
  }
 
  ngOnInit(): void {
-  // this.getdata()
+  this.sectionTitle = 'Dashboard'
  }
 
  // getWeather(): Observable<any> {
