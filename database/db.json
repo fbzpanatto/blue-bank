@@ -1,0 +1,230 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "fbzpanatto",
+      "email": "fbzpanatto@gmail.com",
+      "password": "123456",
+      "personId": 1
+    },
+    {
+      "id": 2,
+      "username": "gislainespaiva",
+      "email": "gislainespaiva@gmail.com",
+      "password": "123456",
+      "personId": 2
+    }
+  ],
+  "persons": [
+    {
+      "id": 1,
+      "name": "Fabrizio Panato",
+      "phone": "11968568913",
+      "cpf": "36933425800",
+      "birthday": "06/02/1991"
+    },
+    {
+      "id": 2,
+      "name": "Gislaine Salvador de Paiva",
+      "phone": "11912347894",
+      "cpf": "31599800100",
+      "birthday": "15/04/1990"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Combustível"
+    },
+    {
+      "id": 2,
+      "name": "Mercado"
+    },
+    {
+      "id": 3,
+      "name": "Farmácia"
+    },
+    {
+      "id": 4,
+      "name": "Salário Fabrizio"
+    },
+    {
+      "id": 5,
+      "name": "Salário Gislaine"
+    },
+    {
+      "id": 6,
+      "name": "Imposto"
+    },
+    {
+      "id": 7,
+      "name": "Água"
+    },
+    {
+      "id": 8,
+      "name": "Luz"
+    },
+    {
+      "id": 9,
+      "name": "Internet"
+    },
+    {
+      "id": 10,
+      "name": "Condomínio"
+    },
+    {
+      "id": 11,
+      "name": "Besteiras"
+    },
+    {
+      "id": 12,
+      "name": "Lazer"
+    },
+    {
+      "id": 13,
+      "name": "Cursos"
+    },
+    {
+      "id": 14,
+      "name": "Casamento"
+    }
+  ],
+  "releases": [
+    {
+      "id": 1,
+      "userId": 1,
+      "category": "3",
+      "releaseValue": "56.21",
+      "releaseDate": "2022-03-21",
+      "operation": "2",
+      "description": "Drogal Itatiba"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "category": "2",
+      "releaseValue": "11.99",
+      "releaseDate": "2022-03-21",
+      "operation": "2",
+      "description": "Minimercado"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "category": "2",
+      "releaseValue": "103.73",
+      "releaseDate": "2022-03-22",
+      "operation": "2",
+      "description": "Supermercado Louveira Itati"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "category": "1",
+      "releaseValue": "204.56",
+      "releaseDate": "2022-03-23",
+      "operation": "2",
+      "description": "Posto Galetto"
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "category": "11",
+      "releaseValue": "10",
+      "releaseDate": "2022-03-23",
+      "operation": "2",
+      "description": "Trufas Mirian"
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "category": "13",
+      "releaseValue": "21.99",
+      "releaseDate": "2022-03-24",
+      "operation": "2",
+      "description": "Curso CSS"
+    },
+    {
+      "id": 7,
+      "userId": 1,
+      "category": "2",
+      "releaseValue": "17.36",
+      "releaseDate": "2022-03-22",
+      "operation": "2",
+      "description": "Pag*Minimerc-CT"
+    },
+    {
+      "id": 8,
+      "userId": 1,
+      "category": "2",
+      "releaseValue": "14.07",
+      "releaseDate": "2022-03-21",
+      "operation": "2",
+      "description": "Pag*Minimerc-CT"
+    },
+    {
+      "id": 9,
+      "userId": 1,
+      "category": "2",
+      "releaseValue": "12.37",
+      "releaseDate": "2022-03-19",
+      "operation": "2",
+      "description": "Pag*Minimerc-CT"
+    },
+    {
+      "id": 10,
+      "userId": 1,
+      "category": "2",
+      "releaseValue": "7.05",
+      "releaseDate": "2022-03-18",
+      "operation": "2",
+      "description": "Pag*Minimerc-CT"
+    },
+    {
+      "id": 11,
+      "userId": 1,
+      "category": "2",
+      "releaseValue": "21.05",
+      "releaseDate": "2022-03-18",
+      "operation": "2",
+      "description": "Pag*Minimerc-CT"
+    },
+    {
+      "id": 12,
+      "userId": 1,
+      "category": "2",
+      "releaseValue": "15.79",
+      "releaseDate": "2022-03-17",
+      "operation": "2",
+      "description": "Pag*Minimerc-CT"
+    },
+    {
+      "id": 13,
+      "userId": 1,
+      "category": "14",
+      "releaseValue": "157.50",
+      "releaseDate": "2022-03-17",
+      "operation": "2",
+      "description": "RogerioH-CT queDe"
+    },
+    {
+      "id": 14,
+      "userId": 1,
+      "category": "2",
+      "releaseValue": "15.24",
+      "releaseDate": "2022-03-16",
+      "operation": "2",
+      "description": "PAG*Minimerc-CT"
+    }
+  ],
+  "operations": [
+    {
+      "id": 1,
+      "name": "Entrada"
+    },
+    {
+      "id": 2,
+      "name": "Saída"
+    }
+  ]
+}

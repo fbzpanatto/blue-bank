@@ -1,99 +1,70 @@
 * {
   box-sizing: border-box;
+  font-size: 16px;
 }
 
-#container-financial-release {
-  padding: 20px;
-  box-sizing: border-box;
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 6px 6px 8px -8px #000000;
+  background-color: #ebebeb;
   height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
 }
 
-#form-container {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  height: 70%;
-  width: 70%;
-  border: 1px solid #094594;
-  border-radius: 5px;
-  box-shadow: 0 0 0.2em rgb(36, 36, 36);
-}
-
-#form-container-left {
-  color: #fff;
-  background-image: linear-gradient(to bottom, #094594, #357cda);
-  flex: 1 1 0;
-}
-
-#form-container-right {
-  flex: 2 1 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
+/* DIV BOXES CONFIGURATION */
 
 form {
+  box-shadow: 0 0 0.3em rgb(36, 36, 36);
+  background-color: #fff;
+  padding: 20px 40px;
+  /* box-shadow: 0 0 0.5em rgb(36, 36, 36); */
+  width: 50%;
+  border-radius: 3px;
+}
+
+div.input-group {
+  margin: 20px 0;
+}
+
+label {
+  margin-bottom: 5px;
+  font-size: 12px;
+  color: #094594;
+  display: block;
+}
+
+input,
+select {
   width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#form-container-inside {
-  width: 80%;
-}
-
-form input,
-form select {
-  width: 100%;
-  color: #357cda;
-  font-size: 1.2em;
-}
-
-form select {
-  padding: 10px;
-  font-size: 1.3em;
-  border: 1px solid #094594;
-}
-
-form input {
   padding: 10px;
   border: none;
-  font-size: 1.3em;
+  color: #357cda;
   border-bottom: 1px solid #094594;
 }
 
-form input:focus {
-  outline: 1px solid #094594;
-}
-
-form input::placeholder {
+input::placeholder {
   color: #357cda;
 }
 
-form label {
-  color: #094594;
-  display: block;
-  margin-bottom: 5px;
+input:focus,
+select:focus {
+  outline: 1px solid #094594;
 }
 
-.input-content-box {
-  margin: 20px;
-}
-
-button[type="submit"] {
+button.submit-btn {
   border: none;
-  background-image: linear-gradient(to bottom, #094594, #357cda);
-  width: 100px;
+  background-color: #094594;
+  width: 100%;
   height: 40px;
-  font-size: 1.2em;
   color: #fff;
-  margin: 20px;
+  margin-top: 20px;
   cursor: pointer;
+  border-radius: 3px;
+  margin-bottom: 30px;
+}
+
+span.material-icons.md-48 {
+  font-size: 48px;
+  color: #fff;
 }

@@ -1,12 +1,5 @@
-<div [class.grid-app-container]="islogged">
-  <span class="line-absolute-position"></span>
-  <div class="grid-item-cell1" *ngIf="islogged">
-    <app-header></app-header>
-  </div>
-  <aside class="grid-item-cell2" *ngIf="islogged">
-    <app-aside></app-aside>
-  </aside>
-  <main class="grid-item-cell3">
-    <router-outlet></router-outlet>
-  </main>
+<app-header></app-header>
+<div class="under-container">
+  <div><app-aside></app-aside></div>
+  <div><router-outlet></router-outlet></div>
 </div>

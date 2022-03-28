@@ -1,0 +1,48 @@
+<div id="listall-container">
+  <div id="filter">
+    <label for="mindate">Data mínima</label>
+    <input type="date" id="mindate" name="mindate" #mindate />
+    <label for="maxdate">Data máxima</label>
+    <input type="date" id="maxdate" name="maxdate" #maxdate />
+    <button
+      type="button"
+      style="cursor: pointer"
+      (click)="filterbydate(mindate.value, maxdate.value)"
+    >
+      <span class="material-icons search">search</span>
+      Filtrar
+    </button>
+  </div>
+  <div id="box-container-list">
+    <table>
+      <tr>
+        <th>#No</th>
+        <th>Categoria</th>
+        <th>Descrição</th>
+        <th>Operação</th>
+        <th>Valor</th>
+        <th>Usuário</th>
+        <th>Data</th>
+        <th>Ações</th>
+      </tr>
+      <tr *ngFor="let release of releases$">
+        <td>{{ release.id }}</td>
+        <td>{{ getCategoryName(release.category) }}</td>
+        <td>{{ release.description }}</td>
+        <td>{{ getOperationName(release.operation) }}</td>
+        <td>{{ release.releaseValue }}</td>
+        <td>{{ release.userId }}</td>
+        <td>{{ release.releaseDate }}</td>
+        <td>
+          <span class="material-icons edit"> edit </span
+          ><span
+            class="material-icons delete"
+            (click)="deleteRelease(release.id)"
+          >
+            delete
+          </span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
