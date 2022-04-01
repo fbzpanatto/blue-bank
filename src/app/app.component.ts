@@ -21,4 +21,8 @@ export class AppComponent {
  settingNewTitle(value: string): void {
   this.headerTitle = value
  }
+
+ sendingReloadReleasesToChild(): void {
+
+ }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { ListRenderComponent } from '../list-render/list-render.component';
 
 @Component({
  selector: 'app-aside',
@@ -8,6 +9,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class AsideComponent implements OnInit {
 
  @Output() listeningForNewtitle = new EventEmitter<string>()
+ @Output() sendingReloadReleases = new EventEmitter()
 
  constructor() { }
 
@@ -17,5 +19,4 @@ export class AsideComponent implements OnInit {
  sendNewTitle(newTitle: string): void {
   this.listeningForNewtitle.emit(newTitle)
  }
-
 }

@@ -3,32 +3,25 @@
   display: flex;
   justify-content: center;
   height: 100%;
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   header {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     flex: 1;
-    .line {
-      height: 10px;
-      width: 100%;
-      background-color: var(--color-primary);
-    }
     h1 {
+      z-index: 10;
       padding: 0.5rem;
-      border: 3px solid var(--color-primary);
-      border-radius: 3px;
       font-size: 3.6rem;
       font-weight: bold;
-      color: var(--color-primary);
+      color: var(--color-secondary);
     }
-    .text-shadow {
-      font-weight: bold;
-      position: absolute;
-      color: var(--color-grey-5);
-      opacity: 0.2;
-      font-size: 4rem;
-    }
+    // .text-shadow {
+    //   font-weight: bold;
+    //   position: absolute;
+    //   color: var(--color-grey-5);
+    //   font-size: 4.5rem;
+    // }
   }
 }

@@ -1,105 +1,208 @@
 div#listall-container {
   position: relative;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  background-color: #ebebeb;
-  box-shadow: inset 6px 6px 8px -8px #000000;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: var(--color-primary);
+  -webkit-box-shadow: inset 6px 6px 8px -8px #000000;
+          box-shadow: inset 6px 6px 8px -8px #000000;
+  padding: 1rem;
   height: 100%;
-  border-top-left-radius: 3px;
 }
 
-div#filter {
-  color: #fff;
+div#table-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  height: 60px;
-  margin: 0 auto;
-  margin-top: 30px;
-  width: 95%;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  background-color: #357cda;
-  font-size: 1.2em;
-  padding: 10px;
-}
-
-div#filter label {
-  margin-right: 1em;
-}
-
-div#filter input {
-  height: 40px;
-  margin-right: 1em;
-  font-size: 1.3em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border-radius: 3px;
-  padding: 0 20px;
-  color: #094594;
+  border: 1px ridge var(--color-secondary);
+  padding: 1rem;
+  height: 100%;
 }
 
-div#filter button {
+div#table-container .filter-content {
+  margin-bottom: 1rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 40px;
-  padding: 0 20px;
-  font-size: 1em;
-  color: #fff;
-  background-color: #094594;
-  border-radius: 3px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-table {
-  background-color: #fff;
-  margin: 0 auto;
-  text-align: center;
-  color: #357cda;
-  width: 95%;
-  overflow: auto;
+div#table-container .filter-content label {
+  font-size: 1rem;
+  color: var(--color-white);
+  margin-right: 1rem;
 }
 
-table th {
-  color: #094594;
-  font-weight: 500;
-  padding: 20px;
-}
-
-table tr {
-  border-bottom: 1px solid #094594;
-}
-
-th,
-td {
-  padding: 5px;
-}
-
-.material-icons {
-  box-shadow: 0 0 0.05em rgb(36, 36, 36);
-  cursor: pointer;
-  padding: 0px 3px;
-  border-radius: 2px;
-  margin: 0px 5px;
-  color: #fff;
-}
-
-.material-icons:hover {
-  box-shadow: none;
-}
-
-.edit {
-  background-color: rgb(66, 66, 66);
-}
-
-.delete {
-  background-color: rgb(224, 39, 39);
-}
-
-.search {
-  box-shadow: none;
+div#table-container .filter-content input {
   border: none;
-  padding: 0;
-  margin: 0;
-  margin-right: 5px;
+  font-size: 1rem;
+  color: var(--color-secondary);
+  height: 2rem;
+  border-radius: 3px;
+  border: 1px ridge var(--color-secondary);
 }
+
+div#table-container .filter-content :nth-child(3) {
+  margin-left: 1rem;
+}
+
+div#table-container .filter-content button {
+  margin-left: 1rem;
+  border-radius: 3px;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1rem;
+  height: 2rem;
+  color: var(--color-grey-1);
+  background-color: var(--color-secondary);
+}
+
+div#table-container .table-content {
+  display: relative;
+  -webkit-box-flex: 9;
+      -ms-flex: 9;
+          flex: 9;
+}
+
+div#table-container .table-content table {
+  width: 100%;
+}
+
+div#table-container .table-content table .modal {
+  display: block;
+  position: absolute;
+  background-color: rgba(51, 51, 49, 0.699);
+  border-radius: 3px;
+  color: #fff;
+  top: 166px;
+  left: 39%;
+  width: 300px;
+  height: 300px;
+}
+
+div#table-container .table-content table th {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1.5rem;
+  color: var(--color-secondary);
+}
+
+div#table-container .table-content table tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border-bottom: 1px ridge var(--color-secondary);
+}
+
+div#table-container .table-content table td {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+  padding: 0.5rem 0;
+  color: var(--color-grey-1);
+}
+
+div#table-container .pagination-content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+div#table-container .pagination-content ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+div#table-container .pagination-content li.page-number {
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: var(--color-grey-1);
+  margin: 0 0.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px ridge var(--color-secondary);
+  border-radius: 3px;
+}
+
+div#table-container .pagination-content li.control {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem 0.3rem;
+  background-color: var(--color-secondary);
+  border-radius: 3px;
+  border: 1px ridge var(--color-secondary);
+  text-decoration: none;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+div#table-container .pagination-content li.control:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+div#table-container .pagination-content li.control:hover .material-icons {
+  color: var(--color-grey-1);
+}
+
+div#table-container .pagination-content li.control .material-icons {
+  color: var(--color-grey-2);
+  font-size: 1.5rem;
+}
+/*# sourceMappingURL=list-render.component.css.map */

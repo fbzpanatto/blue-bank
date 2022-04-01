@@ -6,7 +6,7 @@
   -ms-grid-rows: 13vh auto;
       grid-template-rows: 13vh auto;
   min-height: 100vh;
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
 }
 
 #app-container #header {
@@ -28,6 +28,8 @@
       grid-column-start: 2;
   grid-column-end: 4;
       grid-template-areas: main;
+  border-top: 1px ridge var(--color-secondary);
+  border-left: 1px ridge var(--color-secondary);
   border-top-left-radius: 3px;
   -webkit-box-shadow: inset 3px 3px 3px -2px #000000;
   box-shadow: inset 3px 3px 3px -2px #000000;

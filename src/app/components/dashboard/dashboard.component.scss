@@ -3,7 +3,6 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto 1fr;
-  height: 100%;
   padding: 1rem;
   gap: 1.5rem;
   .grid-item {
@@ -112,7 +111,7 @@
           }
           .right {
             color: var(--color-secondary);
-            background-color: var(--color-grey-4);
+            background-color: var(--color-grey-1);
             border-radius: 3px;
             font-size: 2em;
             text-align: right;

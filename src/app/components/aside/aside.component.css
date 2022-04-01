@@ -1,5 +1,5 @@
 .inside-aside-container {
-  background-color: var(--color-secondary);
+  position: fixed;
   height: 100%;
   padding: 1rem;
   border-top-right-radius: 3px;

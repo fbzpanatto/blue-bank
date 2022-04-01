@@ -7,7 +7,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   height: 100%;
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
 }
 
 .header-container header {
@@ -26,26 +26,11 @@
           flex: 1;
 }
 
-.header-container header .line {
-  height: 10px;
-  width: 100%;
-  background-color: var(--color-primary);
-}
-
 .header-container header h1 {
+  z-index: 10;
   padding: 0.5rem;
-  border: 3px solid var(--color-primary);
-  border-radius: 3px;
   font-size: 3.6rem;
   font-weight: bold;
-  color: var(--color-primary);
-}
-
-.header-container header .text-shadow {
-  font-weight: bold;
-  position: absolute;
-  color: var(--color-grey-5);
-  opacity: 0.2;
-  font-size: 4rem;
+  color: var(--color-secondary);
 }
 /*# sourceMappingURL=header.component.css.map */
