@@ -1,180 +1,68 @@
-<!-- <div id="container">
-  <div id="percent" class="grid-item">
-    <div class="progressLess">
-      <h1>Porcentagem dos gastos</h1>
-      <div class="category-item" *ngFor="let element of sumByCategories">
-        <div
-          id="progress-item"
-          *ngIf="element.category != 5 && element.category != 4"
-        >
-          <p class="title">
-            {{ getCategoryName(element.category) }} |
-            <span class="red">R$ {{ element.total }}</span> |
-            {{ porcentagem(element.total) | number }}%
-          </p>
-          <p>
-            <progress
-              id="file"
-              [value]="porcentagem(element.total)"
-              max="100"
-            ></progress>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="progressRaise">
-      <h1>Porcentagem dos Ganhos</h1>
-      <div class="category-item" *ngFor="let element of sumByCategories">
-        <div
-          id="progress-item"
-          *ngIf="element.category == 5 || element.category == 4"
-        >
-          <p class="title">
-            {{ getCategoryName(element.category) }} |
-            <span class="green">R$ {{ element.total }}</span> |
-            {{ porcentagemGanhos(element.total) | percent }}
-          </p>
-          <p>
-            <progress
-              id="file2"
-              [value]="gerarPorcentagemParaBarradeProgresso(element.total)"
-              max="100"
-            ></progress>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="grid-item">
-    <div id="content-grid-balance">
-      <p>Entradas</p>
-      <p class="pright green">{{ sumEntrance | number }}</p>
-      <p>Saídas</p>
-      <p class="pright red">
-        {{ sumWithdraw | number }}
-      </p>
-      <p>Saldo</p>
-      <p class="pright">{{ resultado | number }}</p>
-    </div>
-  </div>
-  <div class="grid-item">
-    <div id="content-bottom-square">
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
-      </p>
-    </div>
-  </div>
-</div> -->
-
 <div id="dashboard-container">
-  <div class="grid-item percentual-container">
-    <div class="percentual">
-      <div class="title">
-        <p>
-          <span class="percent-symbol">%</span>
-          <span class="first-letter">E</span>ntradas
-        </p>
+ <div class="grid-item percentual-container">
+  <div class="percentual">
+   <div class="title">
+    <p>
+     <span class="percent-symbol">%</span>
+     <span class="first-letter">E</span>ntradas
+    </p>
+   </div>
+   <div class="content">
+    <div class="category" *ngFor="let item of arrdasentradas">
+     <p>{{ item.category }}</p>
+     <div class="progress-container">
+      <span class="progress-percentual">{{item.porcentagemDoTotal | percent}}</span>
+      <div class="progress">
+       <span [ngStyle]="{'width': item.porcenagemParaSpan}"></span>
       </div>
-      <div class="content">
-        <div class="category">
-          <p>Combustível</p>
-          <div class="progress-container">
-            <span class="progress-percentual">75%</span>
-            <div class="progress">
-              <span></span>
-            </div>
-          </div>
-        </div>
-        <div class="category">
-          <p>Combustível</p>
-          <div class="progress-container">
-            <span class="progress-percentual">75%</span>
-            <div class="progress">
-              <span></span>
-            </div>
-          </div>
-        </div>
-      </div>
+     </div>
     </div>
-    <div class="percentual">
-      <div class="title">
-        <p>
-          <span class="percent-symbol">%</span>
-          <span class="first-letter">S</span>aídas
-        </p>
-      </div>
-      <div class="content">
-        <div class="category">
-          <p>Combustível</p>
-          <div class="progress-container">
-            <span class="progress-percentual">75%</span>
-            <div class="progress">
-              <span></span>
-            </div>
-          </div>
-        </div>
-        <div class="category">
-          <p>Combustível</p>
-          <div class="progress-container">
-            <span class="progress-percentual">75%</span>
-            <div class="progress">
-              <span></span>
-            </div>
-          </div>
-        </div>
-        <div class="category">
-          <p>Combustível</p>
-          <div class="progress-container">
-            <span class="progress-percentual">75%</span>
-            <div class="progress">
-              <span></span>
-            </div>
-          </div>
-        </div>
-        <div class="category">
-          <p>Combustível</p>
-          <div class="progress-container">
-            <span class="progress-percentual">75%</span>
-            <div class="progress">
-              <span></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+   </div>
   </div>
-  <div class="grid-item balance-container">
-    <div class="padding">
-      <div class="content-values">
-        <p>Entradas</p>
-        <p class="right"><span>R$ 1200</span></p>
+  <div class="percentual">
+   <div class="title">
+    <p>
+     <span class="percent-symbol">%</span>
+     <span class="first-letter">S</span>aidas
+    </p>
+   </div>
+   <div class="content">
+    <div class="category" *ngFor="let item of arradassaidas">
+     <p>{{ item.category }}</p>
+     <div class="progress-container">
+      <span class="progress-percentual">{{item.porcentagemDoTotal | percent}}</span>
+      <div class="progress">
+       <span [ngStyle]="{'width': item.porcenagemParaSpan}"></span>
       </div>
-      <div class="content-values">
-        <p>Saídas</p>
-        <p class="right"><span>- </span> <span>R$ 1200</span></p>
-      </div>
-      <div class="content-values">
-        <p>Total</p>
-        <p class="right"><span>R$ 1200</span></p>
-      </div>
+     </div>
     </div>
+   </div>
   </div>
-  <div class="grid-item">
-    <div class="content">
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book.
-      </p>
-    </div>
+ </div>
+ <div class="grid-item balance-container">
+  <div class="padding">
+   <div class="content-values">
+    <p>Entradas</p>
+    <p class="right"><span></span>{{entradas}}</p>
+   </div>
+   <div class="content-values">
+    <p>Saídas</p>
+    <p class="right"><span>- </span> <span></span>{{saidas}}</p>
+   </div>
+   <div class="content-values">
+    <p>Total</p>
+    <p class="right"><span></span>{{entradas - saidas}}</p>
+   </div>
   </div>
+ </div>
+ <div class="grid-item">
+  <div class="content">
+   <p>
+    Lorem Ipsum is simply dummy text of the printing and typesetting
+    industry. Lorem Ipsum has been the industry's standard dummy text ever
+    since the 1500s, when an unknown printer took a galley of type and
+    scrambled it to make a type specimen book.
+   </p>
+  </div>
+ </div>
 </div>

@@ -94,6 +94,7 @@
 #dashboard-container .grid-item.percentual-container .percentual .content .category .progress-container span.progress-percentual {
   color: var(--color-grey-2);
   margin-right: 1rem;
+  width: 2rem;
 }
 
 #dashboard-container .grid-item.percentual-container .percentual .content .category .progress-container .progress {
@@ -110,7 +111,6 @@
   top: 0;
   left: 0;
   height: inherit;
-  width: 65%;
   background-color: var(--color-secondary);
 }
 

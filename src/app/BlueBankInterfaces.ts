@@ -1,6 +1,7 @@
 export interface Categories {
  id: number,
- name: string
+ name: string,
+ operationId: number
 }
 
 export interface Operation {
@@ -14,6 +15,6 @@ export interface Releases {
  "releaseValue": number,
  "userId": number,
  "operation": number,
- "category": number,
+ "category": number | string,
  "description": string
 }

@@ -1,5 +1,4 @@
 .inside-aside-container {
- position: fixed;
  height: 100%;
  padding: 1rem;
  border-top-right-radius: 3px;
@@ -15,7 +14,7 @@
    a {
     // box-shadow: inset 2px 2px 2px -2px #000000;
     display: flex;
-    padding: 0.5rem;
+    padding: 0.1rem;
     background-color: var(--color-grey-4);
     border-radius: 3px;
     border: 1px ridge var(--color-secondary);

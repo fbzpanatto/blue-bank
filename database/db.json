@@ -34,62 +34,121 @@
   "categories": [
     {
       "id": 1,
-      "name": "Combustível"
+      "name": "Combustível",
+      "operationId": 2
     },
     {
       "id": 2,
-      "name": "Mercado"
+      "name": "Mercado",
+      "operationId": 2
     },
     {
       "id": 3,
-      "name": "Farmácia"
+      "name": "Farmácia",
+      "operationId": 2
     },
     {
       "id": 4,
-      "name": "Salário Fabrizio"
+      "name": "Salário Fabrizio",
+      "operationId": 1
     },
     {
       "id": 5,
-      "name": "Salário Gislaine"
+      "name": "Salário Gislaine",
+      "operationId": 1
     },
     {
       "id": 6,
-      "name": "Imposto"
+      "name": "Imposto",
+      "operationId": 2
     },
     {
       "id": 7,
-      "name": "Água"
+      "name": "Água",
+      "operationId": 2
     },
     {
       "id": 8,
-      "name": "Luz"
+      "name": "Luz",
+      "operationId": 2
     },
     {
       "id": 9,
-      "name": "Internet"
+      "name": "Internet",
+      "operationId": 2
     },
     {
       "id": 10,
-      "name": "Condomínio"
+      "name": "Condomínio",
+      "operationId": 2
     },
     {
       "id": 11,
-      "name": "Besteiras"
+      "name": "Besteiras",
+      "operationId": 2
     },
     {
       "id": 12,
-      "name": "Lazer"
+      "name": "Lazer",
+      "operationId": 2
     },
     {
       "id": 13,
-      "name": "Cursos"
+      "name": "Cursos",
+      "operationId": 2
     },
     {
       "id": 14,
-      "name": "Casamento"
+      "name": "Casamento",
+      "operationId": 2
     }
   ],
   "releases": [
+    {
+      "id": 1,
+      "userId": 1,
+      "category": "1",
+      "releaseValue": "100",
+      "releaseDate": "2022-04-04",
+      "operation": "2",
+      "description": "asd"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "category": "4",
+      "releaseValue": "1000",
+      "releaseDate": "2022-04-04",
+      "operation": "1",
+      "description": "asd"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "category": "5",
+      "releaseValue": "1000",
+      "releaseDate": "2022-04-04",
+      "operation": "1",
+      "description": "asd"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "category": "1",
+      "releaseValue": "300",
+      "releaseDate": "2022-04-04",
+      "operation": "2",
+      "description": "asd"
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "category": "4",
+      "releaseValue": "500",
+      "releaseDate": "2022-04-04",
+      "operation": "1",
+      "description": "asd"
+    }
   ],
   "operations": [
     {

@@ -2,11 +2,6 @@ import { Releases, Categories } from 'src/app/BlueBankInterfaces';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FetchService } from 'src/app/services/fetch.service';
 
-type sumOfAllCategories = {
- category: number,
- total: number
-}
-
 @Component({
  selector: 'app-dashboard',
  templateUrl: './dashboard.component.html',
@@ -14,87 +9,86 @@ type sumOfAllCategories = {
 })
 export class DashboardComponent implements OnInit {
 
+ categories$: Categories[] = []
+ releases$: Releases[] = []
+
+ entradas!: number
+ saidas!: number
+
+ arrdasentradas!: any
+ arradassaidas!: any
+
  @Output() newTitleEvent = new EventEmitter<string>()
 
- releases$: Releases[] = []
- sumEntrance!: string
- sumWithdraw!: string
- resultado!: number
- categories$!: Categories[]
- sumByCategories: sumOfAllCategories[] = []
-
- constructor(private fetchService: FetchService) { }
+ constructor(private fetch: FetchService) { }
 
  ngOnInit(): void {
   this.newTitleEvent.emit('Dashboard')
-  this.getReleases()
-  this.getCategories()
+  this.getCategoriesAndReleases()
  }
 
- getCategories() {
-  this.fetchService.loadCategories()
-   .subscribe(categories => {
-    this.categories$ = categories
-    this.sumAllCategories()
+ getCategoriesAndReleases() {
+  this.fetch.loadCategories().subscribe(categories => {
+   this.categories$ = categories
+   this.fetch.getAllReleases().subscribe(releases => {
+    this.releases$ = releases
+    // chamar minhas funções aqui?
+    this.formatandoArrayParaoFront()
    })
- }
+  })
 
- getCategoryName(id: number): string {
-  let myele = this.categories$.find(el => el.id == id)
-  return myele!.name
  }
-
- sumAllCategories() {
+ formatandoArrayParaoFront() {
   this.categories$.forEach(category => {
-   let localSum: number = 0
    this.releases$.forEach(release => {
-    if (release.category == category.id) {
-     localSum += Number(release.releaseValue)
+    release.releaseValue = Number(release.releaseValue)
+    if (category.id == release.category) {
+     release.category = category.name
     }
    })
-   this.sumByCategories.push({ "category": Number(category.id), "total": Number(localSum) })
   })
-
- }
-
- getReleases(): void {
-  this.fetchService.getAllReleases()
-   .subscribe(releases => {
-    this.releases$ = releases
-    this.filterMyArr(this.releases$)
+  // Valor Total Entradas
+  const entradas = this.releases$.filter(release => {
+   return release.operation == 1
+  }).reduce((acc: number, curr: Releases) => {
+   return acc += Number(curr.releaseValue)
+  }, 0)
+  // Valor Total Saídas
+  const saidas = this.releases$.filter(release => {
+   return release.operation == 2
+  }).reduce((acc: number, curr: Releases) => {
+   return acc += Number(curr.releaseValue)
+  }, 0)
+  // 
+  let localarr: any = []
+  this.categories$.forEach(category => {
+   let localsum = 0
+   this.releases$.forEach(release => {
+    if (category.name == release.category) {
+     localsum += Number(release.releaseValue)
+    }
    })
- }
-
- porcentagem(totalCategoria: any): number {
-  const result = Number(totalCategoria) / Number(this.sumWithdraw)
-  return result * 100
- }
-
- gerarPorcentagemParaBarradeProgresso(totalCategoria: any) {
-  const valor = this.porcentagemGanhos(totalCategoria)
-  return valor * 100
- }
-
- porcentagemGanhos(totalCategoria: any): number {
-  const result = Number(totalCategoria) / Number(this.sumEntrance)
-  return result
- }
-
- filterMyArr(myarr: Releases[]): void {
-
-  let sumEntrance = 0
-  let sumWithdraw = 0
-
-  myarr.forEach(release => {
-   if (release.operation == 1) {
-    sumEntrance += Number(release.releaseValue)
-   } else if (release.operation == 2) {
-    sumWithdraw += Number(release.releaseValue)
-   }
+   localarr.push({
+    'operationId': category.operationId,
+    'category': category.name,
+    'totalCategoria': localsum,
+    'porcentagemDoTotal': category.operationId == 1 ? Number((localsum / entradas).toFixed(2)) : Number((localsum / saidas).toFixed(2)),
+    'porcenagemParaSpan': category.operationId == 1 ? `${((localsum / entradas) * 100).toFixed(2)}%` : `${((localsum / saidas) * 100).toFixed(2)}%`
+   })
   })
-  this.sumEntrance = sumEntrance.toFixed(2)
-  this.sumWithdraw = sumWithdraw.toFixed(2)
-  this.resultado = Number(this.sumEntrance) - Number(this.sumWithdraw)
-  this.resultado.toFixed(2)
+  const arraydasentradas = localarr.filter((element: any) => {
+   return element.operationId == 1
+  })
+
+  const arraydassaidas = localarr.filter((element: any) => {
+   return element.operationId == 2
+  })
+  this.arrdasentradas = arraydasentradas
+  this.arradassaidas = arraydassaidas
+  this.entradas = entradas
+  this.saidas = saidas
  }
+
+
 }
+
