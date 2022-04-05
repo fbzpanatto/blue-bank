@@ -1,6 +1,8 @@
+import { DatamanipulationService } from './../../services/datamanipulation.service';
 import { Releases, Categories } from 'src/app/BlueBankInterfaces';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FetchService } from 'src/app/services/fetch.service';
+import { Observable } from 'rxjs';
 
 @Component({
  selector: 'app-dashboard',
@@ -18,13 +20,16 @@ export class DashboardComponent implements OnInit {
  arrdasentradas!: any
  arradassaidas!: any
 
+ recebendoaqui$!: Observable<Releases[]>
+
  @Output() newTitleEvent = new EventEmitter<string>()
 
- constructor(private fetch: FetchService) { }
+ constructor(private fetch: FetchService, public mydata: DatamanipulationService) { }
 
  ngOnInit(): void {
   this.newTitleEvent.emit('Dashboard')
   this.getCategoriesAndReleases()
+  this.recebendoaqui$ = this.mydata.releases$
  }
 
  getCategoriesAndReleases() {
@@ -39,14 +44,14 @@ export class DashboardComponent implements OnInit {
 
  }
  formatandoArrayParaoFront() {
-  this.categories$.forEach(category => {
-   this.releases$.forEach(release => {
+  for (let category of this.categories$) {
+   for (let release of this.releases$) {
     release.releaseValue = Number(release.releaseValue)
     if (category.id == release.category) {
      release.category = category.name
     }
-   })
-  })
+   }
+  }
   // Valor Total Entradas
   const entradas = this.releases$.filter(release => {
    return release.operation == 1
@@ -61,13 +66,13 @@ export class DashboardComponent implements OnInit {
   }, 0)
   // 
   let localarr: any = []
-  this.categories$.forEach(category => {
+  for (let category of this.categories$) {
    let localsum = 0
-   this.releases$.forEach(release => {
+   for (let release of this.releases$) {
     if (category.name == release.category) {
      localsum += Number(release.releaseValue)
     }
-   })
+   }
    localarr.push({
     'operationId': category.operationId,
     'category': category.name,
@@ -75,7 +80,7 @@ export class DashboardComponent implements OnInit {
     'porcentagemDoTotal': category.operationId == 1 ? Number((localsum / entradas).toFixed(2)) : Number((localsum / saidas).toFixed(2)),
     'porcenagemParaSpan': category.operationId == 1 ? `${((localsum / entradas) * 100).toFixed(2)}%` : `${((localsum / saidas) * 100).toFixed(2)}%`
    })
-  })
+  }
   const arraydasentradas = localarr.filter((element: any) => {
    return element.operationId == 1
   })
