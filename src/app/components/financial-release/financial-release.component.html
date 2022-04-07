@@ -1,64 +1,75 @@
 <div id="container">
+ <div class="left">
   <form [formGroup]="financialReleaseForm" (submit)="onSubmit()">
-    <div class="input-group">
-      <label for="category">Categoria</label>
-      <select name="category" id="category" formControlName="category">
-        <option value="" disabled>Escolha uma categoria</option>
-        <option *ngFor="let category of categories$" value="{{ category.id }}">
-          {{ category.name }}
-        </option>
-      </select>
-    </div>
-    <div class="input-group">
-      <label for="operation">Operação</label>
-      <select name="operation" id="operation" formControlName="operation">
-        <option value="" disabled>Entrada ou Saída?</option>
-        <option
-          *ngFor="let operation of operations$"
-          value="{{ operation.id }}"
-        >
-          {{ operation.name }}
-        </option>
-      </select>
-    </div>
-    <div class="input-group">
-      <label for="description">Descrição curta (27 caracteres)</label>
-      <input
-        type="text"
-        maxlength="27"
-        formControlName="description"
-        id="description"
-        placeholder="Digite uma descricao curta"
-      />
-    </div>
-    <div class="input-group">
-      <label for="releaseValue">Valor</label>
-      <input
-        type="text"
-        formControlName="releaseValue"
-        id="releaseValue"
-        placeholder="Digite o valor"
-      />
-    </div>
-    <div class="input-group">
-      <label for="releaseDate">Data</label>
-      <input
-        required
-        type="date"
-        name="releaseDate"
-        formControlName="releaseDate"
-        id="releaseDate"
-        placeholder="Escolha uma data"
-      />
-    </div>
-    <div>
-      <button
-        [disabled]="!financialReleaseForm.valid"
-        class="submit-btn"
-        type="submit"
-      >
-        Lançar
-      </button>
-    </div>
+   <div class="input-group">
+    <label for="category">Categoria</label>
+    <select name="category" id="category" formControlName="category">
+     <option value="" disabled>Escolha uma categoria</option>
+     <option
+      *ngFor="let category of categories$"
+      value="{{ category.name }}">
+      {{ category.name }}
+     </option>
+    </select>
+   </div>
+   <div class="input-group">
+    <label for="operation">Operação</label>
+    <select name="operation" id="operation" formControlName="operation">
+     <option value="" disabled>Entrada ou Saída?</option>
+     <option
+      *ngFor="let operation of operations$"
+      value="{{ operation.name }}">
+      {{ operation.name }}
+     </option>
+    </select>
+   </div>
+   <div class="input-group">
+    <label for="description">Descrição curta (27 caracteres)</label>
+    <input
+     type="text"
+     maxlength="27"
+     formControlName="description"
+     id="description"
+     placeholder="Digite uma descricao curta"
+     />
+   </div>
+   <div class="input-group">
+    <label for="releaseValue">Valor</label>
+    <input
+     type="text"
+     formControlName="releaseValue"
+     id="releaseValue"
+     placeholder="Digite o valor"
+     />
+   </div>
+   <div class="input-group">
+    <label for="releaseDate">Data</label>
+    <input
+     required
+     type="date"
+     name="releaseDate"
+     formControlName="releaseDate"
+     id="releaseDate"
+     placeholder="Escolha uma data"
+     />
+   </div>
+   <div>
+    <button
+     [disabled]="!financialReleaseForm.valid"
+     class="submit-btn"
+     type="submit">
+     Salvar Lançamento
+    </button>
+   </div>
   </form>
+ </div>
+ <div class="right">
+  <div class="opacity"></div>
+  <div class="pharagraph">
+   <p>
+    Digite uma <span>Entrada</span> ou uma <span>Saída</span>
+    e clique em Salvar Lançamento.
+   </p>
+  </div>
+ </div>
 </div>

@@ -1,6 +1,7 @@
 import { FetchService } from 'src/app/services/fetch.service';
 import { Component, OnInit } from '@angular/core';
 import { Releases, Categories, Operation } from 'src/app/BlueBankInterfaces';
+import { DatamanipulationService } from 'src/app/services/datamanipulation.service';
 
 @Component({
  selector: 'app-list-render',
@@ -13,8 +14,15 @@ export class ListRenderComponent implements OnInit {
  originalReleases$: Releases[] = []
  categories$: Categories[] = []
  operations$: Operation[] = []
+ totalOfPages!: number
+ actualPage: string = '1'
+ start: number = 0
+ end: number = 10
+ salt: number = 10
+ varshowModal: boolean = false
+ currentItemIdforDelet?: number | string
 
- constructor(private fetchService: FetchService) { }
+ constructor(public fetchService: FetchService, private dataManip: DatamanipulationService) { }
 
  ngOnInit(): void {
   this.getReleases()
@@ -61,20 +69,58 @@ export class ListRenderComponent implements OnInit {
     })
     this.releases$ = releases
     this.originalReleases$ = releases
+    this.totalOfPages = Math.ceil(this.originalReleases$.length / this.salt)
    })
  }
 
- filterbydate(min: String, max: String) {
-  this.releases$ = this.originalReleases$
-  let myArr = this.releases$.filter(release => {
+ filterbydate(releases$: Releases[], min: String, max: String) {
+  if (min == '' || max == '') {
+   return
+  }
+  releases$ = this.originalReleases$
+  if (Number(this.actualPage) > 1) {
+   this.actualPage = '1'
+   this.start = 0
+   this.end = 10
+  }
+  let myArr = releases$.filter(release => {
    return String(release.releaseDate) >= min && String(release.releaseDate) <= max
   })
   this.releases$ = myArr
  }
 
- deleteRelease(id: number): void {
-  this.fetchService.deleteRelease(id).subscribe(_ => {
+ deleteRelease(): void {
+  this.varshowModal = !this.varshowModal
+  this.currentItemIdforDelet = Number(this.currentItemIdforDelet)
+  this.fetchService.deleteRelease(this.currentItemIdforDelet).subscribe(_ => {
+   this.currentItemIdforDelet = ''
    this.getReleases()
   })
  }
+
+ nextPage(releases$: Releases[], actualPage: string): void {
+  this.totalOfPages = Math.ceil(releases$.length / this.salt)
+  let localActualPAge = Number(actualPage)
+  if (localActualPAge < this.totalOfPages) {
+   this.start += this.salt
+   this.end = this.start + this.salt
+   this.actualPage = String(localActualPAge + 1)
+  }
+ }
+ previousPage(releases$: Releases[], actualPage: string): void {
+  let localActualPAge = Number(actualPage)
+  if (localActualPAge > 1) {
+   this.start -= this.salt
+   this.end -= this.salt
+   this.actualPage = String(localActualPAge - 1)
+  }
+ }
+
+ showModal(releaseId: number): void {
+  this.currentItemIdforDelet = releaseId
+  this.varshowModal = !this.varshowModal
+ }
 }
+
+
+// se a função filterbydate for disparada e a página for diferente de um, preciso descobrir como fazer a renderização voltar à página 1.

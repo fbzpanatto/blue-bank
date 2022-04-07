@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { ListRenderComponent } from '../list-render/list-render.component';
 
 @Component({
-  selector: 'app-aside',
-  templateUrl: './aside.component.html',
-  styleUrls: ['./aside.component.css']
+ selector: 'app-aside',
+ templateUrl: './aside.component.html',
+ styleUrls: ['./aside.component.css']
 })
 export class AsideComponent implements OnInit {
 
-  constructor() { }
+ @Output() listeningForNewtitle = new EventEmitter<string>()
+ @Output() sendingReloadReleases = new EventEmitter()
 
-  ngOnInit(): void {
-  }
+ constructor() { }
 
+ ngOnInit(): void {
+ }
+
+ sendNewTitle(newTitle: string): void {
+  this.listeningForNewtitle.emit(newTitle)
+ }
 }

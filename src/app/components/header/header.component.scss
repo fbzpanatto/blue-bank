@@ -1,0 +1,31 @@
+.header-container {
+ position: relative;
+ display: flex;
+ justify-content: center;
+ height: 100%;
+ background-color: var(--color-primary);
+
+ header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  flex: 1;
+
+  h1 {
+   margin-left: .5rem;
+   z-index: 10;
+   padding: 0.5rem;
+   font-size: 2rem;
+   font-weight: bold;
+   color: var(--color-secondary);
+  }
+
+  // .text-shadow {
+  //   font-weight: bold;
+  //   position: absolute;
+  //   color: var(--color-grey-5);
+  //   font-size: 4.5rem;
+  // }
+ }
+}

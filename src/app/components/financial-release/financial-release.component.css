@@ -1,70 +1,177 @@
 * {
-  box-sizing: border-box;
-  font-size: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 1rem;
 }
 
 #container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: inset 6px 6px 8px -8px #000000;
-  background-color: #ebebeb;
-  height: 100%;
+  padding: 1rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
-/* DIV BOXES CONFIGURATION */
-
-form {
-  box-shadow: 0 0 0.3em rgb(36, 36, 36);
-  background-color: #fff;
-  padding: 20px 40px;
-  /* box-shadow: 0 0 0.5em rgb(36, 36, 36); */
-  width: 50%;
+#container .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border-radius: 3px;
+  border: 1px ridge var(--color-secondary);
+  /*configuration*/
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 200px;
+          flex: 1 1 200px;
+  padding: 1rem;
+  min-width: 200px;
+  margin-right: 1rem;
 }
 
-div.input-group {
-  margin: 20px 0;
+#container .right {
+  position: relative;
+  background-image: url("../../../assets/img/chart-6164414.svg");
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+  background-size: cover;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 3px;
+  /*configuration*/
+  -webkit-box-flex: 2;
+      -ms-flex: 2 1 0px;
+          flex: 2 1 0;
+  min-width: 375px;
 }
 
-label {
+#container .right .opacity {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-primary);
+  opacity: 0.7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#container .right .pharagraph {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+  position: absolute;
+}
+
+#container .right .pharagraph p {
+  line-height: 5rem;
+  padding: 1rem 3rem;
+  font-size: 2rem;
+  text-align: justify;
+  font-weight: bold;
+  color: var(--color-grey-1);
+}
+
+#container .right .pharagraph p span {
+  font-size: 3rem;
+  color: var(--color-secondary);
+}
+
+/* Independent Component */
+form div.input-group {
+  margin-bottom: 1rem;
+}
+
+form label {
   margin-bottom: 5px;
   font-size: 12px;
-  color: #094594;
+  color: var(--color-grey-1);
   display: block;
 }
 
-input,
-select {
+form input,
+form select {
   width: 100%;
   padding: 10px;
   border: none;
-  color: #357cda;
-  border-bottom: 1px solid #094594;
+  color: var(--color-secondary);
+  border-bottom: 1px solid var(--color-secondary);
+  font-weight: bold;
+  border-radius: 3px;
 }
 
-input::placeholder {
-  color: #357cda;
+form select option {
+  font-weight: bold;
 }
 
-input:focus,
-select:focus {
-  outline: 1px solid #094594;
+form input::-webkit-input-placeholder {
+  color: var(--color-secondary);
 }
 
-button.submit-btn {
+form input:-ms-input-placeholder {
+  color: var(--color-secondary);
+}
+
+form input::-ms-input-placeholder {
+  color: var(--color-secondary);
+}
+
+form input::placeholder {
+  color: var(--color-secondary);
+}
+
+form input:focus,
+form select:focus {
+  outline: 1px solid var(--color-primary);
+}
+
+form button.submit-btn {
+  font-weight: bold;
+  font-size: 1.5rem;
   border: none;
-  background-color: #094594;
+  background-color: var(--color-secondary);
   width: 100%;
   height: 40px;
-  color: #fff;
+  color: var(--color-grey-1);
   margin-top: 20px;
   cursor: pointer;
   border-radius: 3px;
-  margin-bottom: 30px;
+  border: 1px ridge var(--color-secondary);
 }
 
-span.material-icons.md-48 {
-  font-size: 48px;
-  color: #fff;
+@media screen and (max-width: 780px) {
+  #container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #container .left {
+    margin-right: 0;
+  }
+  #container .right {
+    display: none;
+  }
 }
+/*# sourceMappingURL=financial-release.component.css.map */

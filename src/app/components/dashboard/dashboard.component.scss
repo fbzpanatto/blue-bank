@@ -1,0 +1,148 @@
+#dashboard-container {
+ display: relative;
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ grid-template-rows: auto 1fr;
+ padding: 1rem;
+ gap: 1.5rem;
+
+ .grid-item {
+  border-radius: 3px;
+  border: 1px ridge var(--color-secondary);
+
+  &.percentual-container {
+   position: relative;
+   grid-row-start: 1;
+   grid-row-end: 3;
+   color: var(--color-grey-1);
+   display: flex;
+   flex-direction: column;
+
+   .percentual {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    padding: 0 1rem;
+
+    &:nth-child(1) {
+     padding-top: 1rem;
+     margin-bottom: 1rem;
+    }
+
+    &:nth-child(2) {
+     padding-bottom: 1rem;
+    }
+
+    .title {
+     text-align: center;
+     font-size: 2rem;
+     text-transform: uppercase;
+     font-weight: 600;
+     margin-bottom: 1rem;
+
+     p {
+      .first-letter {
+       margin-right: 0;
+       color: var(--color-secondary);
+       font-size: 1.5em;
+      }
+     }
+
+     span {
+      margin-right: 1rem;
+     }
+
+     .percent-symbol {
+      color: var(--color-secondary);
+      font-size: 1.5em;
+     }
+    }
+
+    .content {
+     .category {
+      margin-bottom: 1rem;
+
+      p {
+       color: var(--color-white);
+       text-transform: uppercase;
+       font-size: 1.1rem;
+       font-weight: 500;
+      }
+
+      .progress-container {
+       margin-top: 0.5rem;
+       display: flex;
+       align-items: center;
+
+       span.progress-percentual {
+        color: var(--color-grey-2);
+        margin-right: 1rem;
+        width: 2rem;
+       }
+
+       .progress {
+        position: relative;
+        height: 0.6rem;
+        width: 100%;
+        background-color: var(--color-grey-4);
+        border-radius: 3px;
+
+        span {
+         border-radius: inherit;
+         position: absolute;
+         top: 0;
+         left: 0;
+         height: inherit;
+         // width: 65%;
+         background-color: var(--color-secondary);
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+
+  &.balance-container {
+   padding: 1rem;
+
+   .padding {
+    // padding-top: 1rem;
+    height: 100%;
+    display: relative;
+
+    div:last-child {
+     margin-bottom: 0;
+    }
+
+    .content-values {
+     margin-bottom: 1rem;
+
+     p {
+      font-size: 2rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--color-grey-1);
+     }
+
+     p:first-child {
+      margin-bottom: 0.5rem;
+     }
+
+     p:nth-child(1)::first-letter {
+      font-size: 3rem;
+      color: var(--color-secondary);
+     }
+
+     .right {
+      color: var(--color-secondary);
+      background-color: var(--color-grey-1);
+      border-radius: 3px;
+      font-size: 2em;
+      text-align: right;
+      padding: 0.5rem;
+     }
+    }
+   }
+  }
+ }
+}

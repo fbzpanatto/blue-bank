@@ -1,0 +1,32 @@
+#app-container {
+ display: grid;
+ grid-template-columns: auto 5fr 3fr;
+ grid-template-rows: 13vh auto;
+ min-height: 100vh;
+ background-color: var(--color-primary);
+
+ // gap: 2px 2px;
+ #header {
+  grid-template-areas: header;
+  grid-column-start: 1;
+  grid-column-end: 4;
+ }
+
+ #aside-left {
+  grid-template-areas: asideL;
+  grid-row-start: 2;
+ }
+
+ #main {
+  position: relative;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-template-areas: main;
+  border-top: 1px ridge var(--color-secondary);
+  border-left: 1px ridge var(--color-secondary);
+  border-top-left-radius: 3px;
+  -webkit-box-shadow: inset 3px 3px 3px -2px #000000;
+  box-shadow: inset 3px 3px 3px -2px #000000;
+  background-color: var(--color-primary);
+ }
+}

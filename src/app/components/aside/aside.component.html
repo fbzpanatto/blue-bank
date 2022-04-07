@@ -1,24 +1,28 @@
 <div class="inside-aside-container">
-  <div class="img-box"></div>
-  <div class="navbar-container">
-    <nav>
-      <ul>
-        <li>
-          <a routerLink="dashboard"
-            ><span class="material-icons"> dashboard </span>Dashboard</a
-          >
-        </li>
-        <li>
-          <a routerLink="finrelease"
-            ><span class="material-icons"> add </span>Lançar Novo</a
+ <div class="img-box"></div>
+ <div class="navbar-container">
+  <nav>
+   <ul>
+    <li>
+     <a (click)="sendNewTitle('Dashboard')" routerLink="dashboard"><span class="material-icons"> dashboard </span></a>
+    </li>
+    <li (click)="sendNewTitle('Cadastros')">
+     <a routerLink="finrelease"><span class="material-icons"> add </span></a>
+    </li>
+    <li>
+     <a (click)="sendNewTitle('Lançamentos')" routerLink="listall"><span class="material-icons"> list </span></a>
+    </li>
+    <!-- <li>
+          <a (click)="sendNewTitle('Configurações')" routerLink="listall"
+            ><span class="material-icons"> settings </span></a
           >
         </li>
         <li>
           <a routerLink="listall"
-            ><span class="material-icons"> list </span>Ver todos</a
+            ><span class="material-icons"> logout </span></a
           >
-        </li>
-      </ul>
-    </nav>
-  </div>
+        </li> -->
+   </ul>
+  </nav>
+ </div>
 </div>
