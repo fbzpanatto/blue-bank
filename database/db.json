@@ -101,63 +101,196 @@
       "id": 14,
       "name": "Casamento",
       "operationId": 2
+    },
+    {
+      "id": 15,
+      "name": "Cartão Crédito",
+      "operationId": 2
+    },
+    {
+      "id": 16,
+      "name": "Veterinário",
+      "operationId": 2
+    },
+    {
+      "id": 17,
+      "name": "Pedágio",
+      "operationId": 2
+    },
+    {
+      "id": 18,
+      "name": "Alimentação Rua",
+      "operationId": 2
+    },
+    {
+      "id": 19,
+      "name": "Caixa",
+      "operationId": 2
     }
   ],
   "releases": [
     {
       "id": 1,
       "userId": 1,
-      "category": "1",
-      "releaseValue": "100",
-      "releaseDate": "2022-04-04",
-      "operation": "2",
-      "description": "asd"
+      "category": "Salário Fabrizio",
+      "releaseValue": "2011.14",
+      "releaseDate": "2022-04-01",
+      "operation": "Entradas",
+      "description": "1º Parcela Abr"
     },
     {
       "id": 2,
       "userId": 1,
-      "category": "4",
-      "releaseValue": "1000",
-      "releaseDate": "2022-04-04",
-      "operation": "1",
-      "description": "asd"
+      "category": "Cartão Crédito",
+      "releaseValue": "732.08",
+      "releaseDate": "2022-04-01",
+      "operation": "Saídas",
+      "description": "Fat Março"
     },
     {
       "id": 3,
       "userId": 1,
-      "category": "5",
-      "releaseValue": "1000",
-      "releaseDate": "2022-04-04",
-      "operation": "1",
-      "description": "asd"
+      "category": "Veterinário",
+      "releaseValue": "132",
+      "releaseDate": "2022-04-01",
+      "operation": "Saídas",
+      "description": "Ração/Banho"
     },
     {
       "id": 4,
       "userId": 1,
-      "category": "1",
-      "releaseValue": "300",
-      "releaseDate": "2022-04-04",
-      "operation": "2",
-      "description": "asd"
+      "category": "Internet",
+      "releaseValue": "100",
+      "releaseDate": "2022-04-01",
+      "operation": "Saídas",
+      "description": "Internet"
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "category": "Imposto",
+      "releaseValue": "104.24",
+      "releaseDate": "2022-04-01",
+      "operation": "Saídas",
+      "description": "IPTU"
     },
     {
       "id": 6,
       "userId": 1,
-      "category": "4",
-      "releaseValue": "500",
+      "category": "Combustível",
+      "releaseValue": "50",
+      "releaseDate": "2022-04-01",
+      "operation": "Saídas",
+      "description": "Posto Galetto"
+    },
+    {
+      "id": 7,
+      "userId": 1,
+      "category": "Pedágio",
+      "releaseValue": "8.30",
+      "releaseDate": "2022-04-01",
+      "operation": "Saídas",
+      "description": "Ida a Atibaia"
+    },
+    {
+      "id": 8,
+      "userId": 1,
+      "category": "Lazer",
+      "releaseValue": "80",
+      "releaseDate": "2022-04-01",
+      "operation": "Saídas",
+      "description": "Mexicano Atibaia"
+    },
+    {
+      "id": 9,
+      "userId": 1,
+      "category": "Pedágio",
+      "releaseValue": "8",
+      "releaseDate": "2022-04-03",
+      "operation": "Saídas",
+      "description": "Jundiai ida e volta"
+    },
+    {
+      "id": 10,
+      "userId": 1,
+      "category": "Cartão Crédito",
+      "releaseValue": "108.60",
       "releaseDate": "2022-04-04",
-      "operation": "1",
-      "description": "asd"
+      "operation": "Saídas",
+      "description": "Bradesco"
+    },
+    {
+      "id": 11,
+      "userId": 1,
+      "category": "Besteiras",
+      "releaseValue": "12.23",
+      "releaseDate": "2022-04-03",
+      "operation": "Saídas",
+      "description": "miniMercad"
+    },
+    {
+      "id": 12,
+      "userId": 1,
+      "category": "Caixa",
+      "releaseValue": "700",
+      "releaseDate": "2022-04-01",
+      "operation": "Saídas",
+      "description": "pix "
+    },
+    {
+      "id": 13,
+      "userId": 1,
+      "category": "Pedágio",
+      "releaseValue": "8.30",
+      "releaseDate": "2022-04-04",
+      "operation": "Saídas",
+      "description": "Pedágio Volta Atibaia"
+    },
+    {
+      "id": 14,
+      "userId": 1,
+      "category": "Lazer",
+      "releaseValue": "26",
+      "releaseDate": "2022-04-05",
+      "operation": "Saídas",
+      "description": "Pastel no parque"
+    },
+    {
+      "id": 15,
+      "userId": 1,
+      "category": "Combustível",
+      "releaseValue": "60",
+      "releaseDate": "2022-04-06",
+      "operation": "Saídas",
+      "description": "Posto Galetto Quarta-feira"
+    },
+    {
+      "id": 16,
+      "userId": 1,
+      "category": "Mercado",
+      "releaseValue": "19",
+      "releaseDate": "2022-04-06",
+      "operation": "Saídas",
+      "description": "Mercado Condominio"
+    },
+    {
+      "id": 17,
+      "userId": 1,
+      "category": "Cartão Crédito",
+      "releaseValue": "80",
+      "releaseDate": "2022-04-06",
+      "operation": "Saídas",
+      "description": "Presente Aniversário Nany"
     }
   ],
   "operations": [
     {
       "id": 1,
-      "name": "Entrada"
+      "name": "Entradas"
     },
     {
       "id": 2,
-      "name": "Saída"
+      "name": "Saídas"
     }
   ]
 }

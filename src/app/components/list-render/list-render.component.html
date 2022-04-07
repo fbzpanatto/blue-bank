@@ -1,75 +1,74 @@
 <div id="listall-container">
-  <div id="table-container">
-    <div class="filter-content">
-      <label for="mindate">Data mínima</label>
-      <input type="date" id="mindate" name="mindate" #mindate />
-      <label for="maxdate">Data máxima</label>
-      <input type="date" id="maxdate" name="maxdate" #maxdate />
-      <button
-        type="button"
-        style="cursor: pointer"
-        (click)="filterbydate(releases$, mindate.value, maxdate.value)"
-      >
-        <span class="material-icons search">search</span>
-        Filtrar
-      </button>
+ <div id="table-container">
+  <div class="filter-content">
+   <label for="mindate">Data mínima</label>
+   <input type="date" id="mindate" name="mindate" #mindate />
+   <label for="maxdate">Data máxima</label>
+   <input type="date" id="maxdate" name="maxdate" #maxdate />
+   <button
+    type="button"
+    style="cursor: pointer"
+    (click)="filterbydate(releases$, mindate.value, maxdate.value)">
+    <span class="material-icons search">search</span>
+    Filtrar
+   </button>
+  </div>
+  <div class="table-content">
+   <table>
+    <div *ngIf="varshowModal" class="modal">
+     <p>Deseja realmente deletar este item?</p>
+     <button (click)="deleteRelease()">SIM</button>
+     <button (click)="varshowModal= !varshowModal">NÃO</button>
     </div>
-    <div class="table-content">
-      <table>
-        <div *ngIf="varshowModal" class="modal">
-          <p>Deseja realmente deletar este item?</p>
-          <button (click)="deleteRelease()">SIM</button>
-          <button (click)="varshowModal = !varshowModal">NÃO</button>
-        </div>
-        <tr>
-          <th>#No</th>
-          <th>Categoria</th>
-          <th>Descrição</th>
-          <th>Operação</th>
-          <th>Valor</th>
-          <th>Usuário</th>
-          <th>Data</th>
-          <th>Ações</th>
-        </tr>
-        <tr *ngFor="let release of releases$ | slice: start:end; index as i">
-          <td>{{ release.id }}</td>
-          <td>{{ getCategoryName(release.category) }}</td>
-          <td>{{ release.description }}</td>
-          <td>{{ getOperationName(release.operation) }}</td>
-          <td>{{ release.releaseValue }}</td>
-          <td>{{ release.userId }}</td>
-          <td>{{ release.releaseDate }}</td>
-          <td>
-            <span class="material-icons edit"> edit </span>
-            <!-- <span
+    <tr>
+     <th>#No</th>
+     <th>Categoria</th>
+     <th>Descrição</th>
+     <th>Operação</th>
+     <th>Valor</th>
+     <th>Usuário</th>
+     <th>Data</th>
+     <th>Ações</th>
+    </tr>
+    <tr *ngFor="let release of releases$ | slice: start:end; index as i">
+     <td>{{ release.id }}</td>
+     <td>{{ release.category }}</td>
+     <td>{{ release.description }}</td>
+     <td>{{ release.operation }}</td>
+     <td>{{ release.releaseValue }}</td>
+     <td>{{ release.userId }}</td>
+     <td>{{ release.releaseDate }}</td>
+     <td>
+      <span class="material-icons edit"> edit </span>
+      <!-- <span
               class="material-icons delete"
               (click)="deleteRelease(release.id)"
             >
               delete
             </span> -->
-            <span class="material-icons delete" (click)="showModal(release.id)">
-              delete
-            </span>
-          </td>
-        </tr>
-      </table>
-    </div>
-    <div class="pagination-content">
-      <ul>
-        <li class="control" (click)="previousPage(releases$, actualPage)">
-          <span class="material-icons"> first_page </span>
-        </li>
-        <li class="control" (click)="previousPage(releases$, actualPage)">
-          <span class="material-icons"> navigate_before </span>
-        </li>
-        <li class="page-number">{{ actualPage }}</li>
-        <li class="control" (click)="nextPage(releases$, actualPage)">
-          <span class="material-icons"> navigate_next </span>
-        </li>
-        <li class="control" (click)="nextPage(releases$, actualPage)">
-          <span class="material-icons"> last_page </span>
-        </li>
-      </ul>
-    </div>
+      <span class="material-icons delete" (click)="showModal(release.id)">
+       delete
+      </span>
+     </td>
+    </tr>
+   </table>
   </div>
+  <div class="pagination-content">
+   <ul>
+    <li class="control" (click)="previousPage(releases$, actualPage)">
+     <span class="material-icons"> first_page </span>
+    </li>
+    <li class="control" (click)="previousPage(releases$, actualPage)">
+     <span class="material-icons"> navigate_before </span>
+    </li>
+    <li class="page-number">{{ actualPage }}</li>
+    <li class="control" (click)="nextPage(releases$, actualPage)">
+     <span class="material-icons"> navigate_next </span>
+    </li>
+    <li class="control" (click)="nextPage(releases$, actualPage)">
+     <span class="material-icons"> last_page </span>
+    </li>
+   </ul>
+  </div>
+ </div>
 </div>

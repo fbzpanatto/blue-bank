@@ -14,7 +14,7 @@ export interface Releases {
  "releaseDate": Date,
  "releaseValue": number,
  "userId": number,
- "operation": number,
+ "operation": number | string,
  "category": number | string,
  "description": string
 }

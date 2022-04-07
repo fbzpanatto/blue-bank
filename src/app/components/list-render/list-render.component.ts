@@ -1,6 +1,7 @@
 import { FetchService } from 'src/app/services/fetch.service';
 import { Component, OnInit } from '@angular/core';
 import { Releases, Categories, Operation } from 'src/app/BlueBankInterfaces';
+import { DatamanipulationService } from 'src/app/services/datamanipulation.service';
 
 @Component({
  selector: 'app-list-render',
@@ -21,7 +22,7 @@ export class ListRenderComponent implements OnInit {
  varshowModal: boolean = false
  currentItemIdforDelet?: number | string
 
- constructor(public fetchService: FetchService) { }
+ constructor(public fetchService: FetchService, private dataManip: DatamanipulationService) { }
 
  ngOnInit(): void {
   this.getReleases()

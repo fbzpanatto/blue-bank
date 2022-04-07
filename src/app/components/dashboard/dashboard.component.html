@@ -8,12 +8,12 @@
     </p>
    </div>
    <div class="content">
-    <div class="category" *ngFor="let item of arrdasentradas">
-     <p>{{ item.category }}</p>
+    <div class="category" *ngFor="let item of mydata.arrdasentradas">
+     <p>{{ item.name }}</p>
      <div class="progress-container">
-      <span class="progress-percentual">{{item.porcentagemDoTotal | percent}}</span>
+      <span class="progress-percentual">{{item.perce | percent}}</span>
       <div class="progress">
-       <span [ngStyle]="{'width': item.porcenagemParaSpan}"></span>
+       <span [ngStyle]="{'width': item.tospa}"></span>
       </div>
      </div>
     </div>
@@ -27,12 +27,12 @@
     </p>
    </div>
    <div class="content">
-    <div class="category" *ngFor="let item of arradassaidas">
-     <p>{{ item.category }}</p>
+    <div class="category" *ngFor="let item of mydata.arradassaidas">
+     <p>{{ item.name }}</p>
      <div class="progress-container">
-      <span class="progress-percentual">{{item.porcentagemDoTotal | percent}}</span>
+      <span class="progress-percentual">{{item.perce | percent}}</span>
       <div class="progress">
-       <span [ngStyle]="{'width': item.porcenagemParaSpan}"></span>
+       <span [ngStyle]="{'width': item.tospa}"></span>
       </div>
      </div>
     </div>
@@ -43,15 +43,15 @@
   <div class="padding">
    <div class="content-values">
     <p>Entradas</p>
-    <p class="right"><span></span>{{entradas}}</p>
+    <p class="right"><span></span>{{mydata.entradas | number}}</p>
    </div>
    <div class="content-values">
     <p>Saídas</p>
-    <p class="right"><span>- </span> <span></span>{{saidas}}</p>
+    <p class="right"><span>- </span> <span></span>{{mydata.saidas | number}}</p>
    </div>
    <div class="content-values">
     <p>Total</p>
-    <p class="right"><span></span>{{entradas - saidas}}</p>
+    <p class="right"><span></span>{{mydata.entradas - mydata.saidas | number}}</p>
    </div>
   </div>
  </div>
